@@ -8,6 +8,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
 
@@ -23,9 +24,9 @@
             </div>
             <nav class="nav-links" id="navLinks">
                 <a href="#proceso">¿Cómo funciona?</a>
-                <a href="#calculadora">Calculadora</a>
-                <a href="#preguntas">Preguntas</a>
+                <a href="#calculadora">Cotización</a>
                 <a href="nosotros.html">Nosotros</a>
+                <a href="#preguntas">Preguntas</a>
                 <div class="nav-socials nav-socials-mobile">
                     <a href="https://www.facebook.com/profile.php?id=61592977619754" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
                     <a href="https://www.instagram.com/froximport?igsh=emxqamZuNndoajQx" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -134,8 +135,8 @@
             <div class="guia-card reveal">
                 <div class="guia-icon icon-float"><i class="fas fa-location-dot"></i></div>
                 <h4>Datos de envío (Shipping)</h4>
-                <p>Al pagar en la tienda, coloca como destinatario <strong>tus nombres + tu primer apellido + el código +FX</strong> que te asignamos al registrarte, junto con la dirección de nuestro almacén en Miami. Ese código nos ayuda a identificar tu paquete apenas llega, entre todos los que recibimos ese día.</p>
-                <p style="margin-top: 12px; font-size: 0.88rem; color: #94a3b8;">Recuerda: las compras menores a $200 no pagan impuestos en Perú.</p>
+                <p>Al pagar en la tienda, usa como destinatario tus nombres, tu primer apellido y el código <span class="guia-code-badge">+FX</span> que te asignamos al registrarte, junto con la dirección de nuestro almacén en Miami.</p>
+                <p class="guia-note">💡 Recuerda: las compras menores a $200 no pagan impuestos en Perú.</p>
             </div>
             <div class="guia-card reveal reveal-delay1">
                 <div class="guia-icon icon-float icon-float-delay1"><i class="fas fa-credit-card"></i></div>
@@ -145,7 +146,7 @@
             <div class="guia-card reveal reveal-delay2">
                 <div class="guia-icon icon-float icon-float-delay2"><i class="fas fa-paper-plane"></i></div>
                 <h4>Después de comprar</h4>
-                <p>Envíanos por WhatsApp (o a <strong>froximport@gmail.com</strong>) tu <strong>orden de compra</strong>, el <strong>número de tracking</strong> y tu <strong>DNI</strong>. La factura debe ser la original que te envía la tienda, sin editar y a tu nombre — con eso arrancamos el proceso hacia Lima.</p>
+                <p>Envíanos por WhatsApp (o a <strong>pedidos@froximport.me</strong>) tu <strong>orden de compra</strong>, el <strong>número de tracking</strong> y tu <strong>DNI</strong>. La factura debe ser la original que te envía la tienda, sin editar y a tu nombre — con eso arrancamos el proceso hacia Lima.</p>
             </div>
         </div>
     </section>
@@ -211,32 +212,34 @@
             <div class="calc-right-area">
                 <div class="calc-container">
                     <div class="container-text reveal" style="margin: 0 0 30px 0;">
-                        <h2>Simulador de Importación</h2>
-                        <p>Coloca los kilos estimados y mira cuánto vas a pagar netamente por el flete internacional.</p>
+                        <h2>Cotiza tu Envío Gratis</h2>
+                        <p>Déjanos tus datos y te enviamos los requisitos para tu primer envío directo a tu correo.</p>
                     </div>
                     
-                    <div class="calculadora-box reveal">
-                        <span class="calc-label">Peso de la mercancía:</span>
-                        <div class="input-group">
-                            <input type="number" id="inputPeso" placeholder="0" min="1" value="1">
-                            <span class="input-unit">KG</span>
-                            <i class="fas fa-box-open calc-input-icon icon-float"></i>
+                    <form class="calculadora-box reveal" id="quoteForm">
+                        <div class="quote-field">
+                            <label for="quoteNombre">Nombre completo</label>
+                            <input type="text" id="quoteNombre" name="quoteNombre" placeholder="Ej. María Torres" required>
+                        </div>
+                        <div class="quote-field">
+                            <label for="quoteCorreo">Correo electrónico</label>
+                            <input type="email" id="quoteCorreo" name="quoteCorreo" placeholder="tucorreo@ejemplo.com" required>
+                        </div>
+                        <div class="quote-field">
+                            <label for="quoteTelefono">WhatsApp / Teléfono</label>
+                            <input type="tel" id="quoteTelefono" name="quoteTelefono" placeholder="Ej. 987 654 321" required>
                         </div>
 
-                        <div class="resultado-box">
-                            <div style="text-align: left;">
-                                <span style="font-size: 0.9rem; color: #cbd5e1; display: block; margin-bottom: 4px;">Flete Froximport (Todo Incluido):</span>
-                                <div id="resultado">$12.00 USD</div>
-                            </div>
-                            <div class="calc-decor-icon icon-float">
-                                <i class="fas fa-calculator"></i>
-                            </div>
-                        </div>
+                        <button type="submit" class="btn-whatsapp quote-submit-btn" id="quoteSubmitBtn">
+                            <i class="fas fa-paper-plane"></i> Enviar y Recibir Requisitos
+                        </button>
+
+                        <p id="quoteFormMsg" class="quote-form-msg" style="display: none;"></p>
                         
-                        <p style="font-size: 0.8rem; color: #64748b; margin-top: 20px; line-height: 1.5;">
-                            <i class="fas fa-info-circle"></i> Los cálculos son aproximados y se ejecutan sobre peso neto real. Mercancías restringidas podrían requerir permisos adicionales.
+                        <p style="font-size: 0.8rem; color: #64748b; margin-top: 16px; line-height: 1.5;">
+                            <i class="fas fa-shield-halved"></i> Tus datos son solo para coordinar tu envío. Cero spam.
                         </p>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>

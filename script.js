@@ -8,6 +8,14 @@ const WHATSAPP_NUMBER = "51991657904";
 const WHATSAPP_MENSAJE = "¡Hola, Frox Import! Estoy interesado/a en importar unos productos y quisiera más información sobre el servicio.";
 const TARIFA_POR_KILO = 12.00;
 
+// ⚠️ CONFIGURACIÓN DE EMAILJS (formulario "Cotiza tu Envío")
+// Reemplaza estos 4 valores con los tuyos cuando termines de crear tu cuenta en emailjs.com
+// (te explico exactamente dónde sacar cada uno en la guía que te doy aparte).
+const EMAILJS_PUBLIC_KEY   = "_xdecPGqOIrEeRTOU";
+const EMAILJS_SERVICE_ID   = "service_rzgec67";
+const EMAILJS_TEMPLATE_NOTIFY  = "template_e3xfefw";   // el correo que TE llega a ti
+const EMAILJS_TEMPLATE_WELCOME = "template_fmwwmkd";     // el correo que le llega AL CLIENTE
+
 document.addEventListener('DOMContentLoaded', () => {
 
     /* ---------- 1. CALCULADORA DE FLETE ---------- */
@@ -145,6 +153,59 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         // Fallback: si el navegador no soporta IntersectionObserver, muestra todo directo
         revealEls.forEach(el => el.classList.add('visible'));
+    }
+
+    /* ---------- 6. FORMULARIO "COTIZA TU ENVÍO" (EmailJS) ---------- */
+    const quoteForm = document.getElementById('quoteForm');
+    const quoteSubmitBtn = document.getElementById('quoteSubmitBtn');
+    const quoteFormMsg = document.getElementById('quoteFormMsg');
+
+    if (quoteForm && typeof emailjs !== 'undefined') {
+        emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+
+        quoteForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const nombre = document.getElementById('quoteNombre').value.trim();
+            const correo = document.getElementById('quoteCorreo').value.trim();
+            const telefono = document.getElementById('quoteTelefono').value.trim();
+
+            if (!nombre || !correo || !telefono) return;
+
+            quoteSubmitBtn.disabled = true;
+            quoteSubmitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+            quoteFormMsg.style.display = 'none';
+
+            const templateParams = {
+                nombre: nombre,
+                correo: correo,
+                telefono: telefono,
+                to_email: correo // usado por la plantilla de bienvenida para saber a quién responder
+            };
+
+            // Correo 1: te avisa a TI que lleg\u00f3 un nuevo interesado
+            emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_NOTIFY, templateParams)
+                .then(() => {
+                    // Correo 2: bienvenida autom\u00e1tica AL CLIENTE
+                    return emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_WELCOME, templateParams);
+                })
+                .then(() => {
+                    quoteFormMsg.textContent = '¡Listo! Revisa tu correo — te acabamos de enviar los requisitos para tu primer envío.';
+                    quoteFormMsg.className = 'quote-form-msg success';
+                    quoteFormMsg.style.display = 'block';
+                    quoteForm.reset();
+                })
+                .catch((err) => {
+                    console.error('EmailJS error:', err);
+                    quoteFormMsg.textContent = 'Algo salió mal. Escríbenos directo por WhatsApp y te ayudamos ahí mismo.';
+                    quoteFormMsg.className = 'quote-form-msg error';
+                    quoteFormMsg.style.display = 'block';
+                })
+                .finally(() => {
+                    quoteSubmitBtn.disabled = false;
+                    quoteSubmitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Enviar y Recibir Requisitos';
+                });
+        });
     }
 
 });

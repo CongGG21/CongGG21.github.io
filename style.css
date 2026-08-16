@@ -574,9 +574,26 @@ header {
     justify-content: center;
     margin-bottom: 16px;
 }
-.guia-card h4 { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; color: #ffffff; }
-.guia-card p { font-size: 0.95rem; line-height: 1.6; color: #cbd5e1; }
+.guia-card h4 { font-size: 1.1rem; font-weight: 700; margin-bottom: 12px; color: #ffffff; }
+.guia-card p { font-size: 0.95rem; line-height: 1.65; color: #cbd5e1; margin-bottom: 12px; }
+.guia-card p:last-child { margin-bottom: 0; }
 .guia-card strong { color: #ffffff; }
+.guia-code-badge {
+    display: inline-block;
+    background: rgba(16, 185, 129, 0.15);
+    color: var(--primary);
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 0.9em;
+}
+.guia-note {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    border-top: 1px solid #1e293b;
+    padding-top: 12px;
+    margin-top: 4px;
+}
 
 @media (max-width: 900px) {
     .guia-compra-3 { grid-template-columns: 1fr; }
@@ -728,6 +745,37 @@ th { background-color: #f8fafc; color: var(--text-main); font-weight: 700; }
 }
 
 .calc-label { display: block; font-weight: 700; color: #0f172a; font-size: 1.05rem; margin-bottom: 12px; }
+
+/* FORMULARIO "COTIZA TU ENVÍO" (reemplaza la calculadora) */
+.quote-field { margin-bottom: 18px; }
+.quote-field label { display: block; font-weight: 700; color: #0f172a; font-size: 0.92rem; margin-bottom: 8px; }
+.quote-field input {
+    width: 100%;
+    padding: 16px 18px;
+    background-color: #f1f5f9;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    font-size: 1rem;
+    color: var(--text-main);
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.quote-field input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15); }
+
+.quote-submit-btn { width: 100%; justify-content: center; margin-top: 6px; border: none; cursor: pointer; font-size: 1rem; }
+.quote-submit-btn:disabled { opacity: 0.65; cursor: not-allowed; }
+
+.quote-form-msg {
+    margin-top: 16px;
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+}
+.quote-form-msg.success { background-color: rgba(16, 185, 129, 0.12); color: #047857; }
+.quote-form-msg.error { background-color: rgba(239, 68, 68, 0.12); color: #b91c1c; }
 
 .input-group { position: relative; display: flex; align-items: center; width: 100%; }
 
@@ -1032,7 +1080,7 @@ footer p:first-of-type { color: #ffffff; font-weight: 600; }
 .valor-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 12px; }
 .valor-card p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; }
 
-.nosotros-cta { padding: 90px 20px; }
+.nosotros-cta { padding: 90px 20px; position: relative; overflow: hidden; }
 .nosotros-cta-box {
     max-width: 650px;
     margin: 0 auto;
