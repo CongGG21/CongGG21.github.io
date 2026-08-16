@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Froximport - Tu Casillero Internacional Seguro</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <div class="top-announcement">
+        Envíos Libres de Impuestos en Perú para compras menores a $200 USD. ¡Aprovecha hoy!
+    </div>
+
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="assets/froximport-logo-circle.png" alt="Froximport" class="logo-img">
+                FROX<span>IMPORT</span>
+            </div>
+            <nav class="nav-links" id="navLinks">
+                <a href="#proceso">¿Cómo funciona?</a>
+                <a href="#calculadora">Calculadora</a>
+                <a href="#preguntas">Preguntas</a>
+                <a href="nosotros.html">Nosotros</a>
+                <div class="nav-socials nav-socials-mobile">
+                    <a href="https://www.facebook.com/profile.php?id=61592977619754" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/froximport?igsh=emxqamZuNndoajQx" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@frox.import?_r=1&_t=ZS-98hogxlpGYX" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://www.youtube.com/@FroxImport" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://x.com/FroxImport" target="_blank" rel="noopener" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+                </div>
+                <a href="#" class="btn-nav nav-cta-mobile wa-link">Abrir Casillero</a>
+            </nav>
+            <div class="nav-socials nav-socials-desktop">
+                <a href="https://www.facebook.com/profile.php?id=61592977619754" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/froximport?igsh=emxqamZuNndoajQx" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@frox.import?_r=1&_t=ZS-98hogxlpGYX" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.youtube.com/@FroxImport" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="https://x.com/FroxImport" target="_blank" rel="noopener" aria-label="X (Twitter)"><i class="fab fa-x-twitter"></i></a>
+            </div>
+            <a href="#" class="btn-nav btn-nav-desktop wa-link">Abrir Casillero</a>
+            <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menú" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <section class="hero" id="heroSection">
+        <div class="hero-slides" id="heroSlides">
+            <div class="hero-slide-bg active" data-tint="navy" style="background-image: url('export1/ima1.jpg');"></div>
+            <div class="hero-slide-bg" data-tint="emerald" style="background-image: url('assets/hero-bg-2.jpg');"></div>
+            <div class="hero-slide-bg" data-tint="amber" style="background-image: url('assets/hero-bg-3.jpg');"></div>
+        </div>
+
+        <button type="button" class="hero-arrow hero-arrow-left" id="heroPrev" aria-label="Anterior">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button type="button" class="hero-arrow hero-arrow-right" id="heroNext" aria-label="Siguiente">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+
+        <img src="assets/froximport-logo.png" alt="" class="hero-logo-watermark">
+        <div class="hero-container">
+            <div class="price-badge-wrapper" style="display: inline-block; margin-bottom: 15px;">
+                <span style="background: rgba(255,255,255,0.1); color: #ffffff; padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; border: 1px solid rgba(255,255,255,0.2);">
+                    🌐 Tu Puente Logístico Miami / China → Lima
+                </span>
+            </div>
+
+            <h1 id="heroHeadline">Tu Casillero Internacional<br>Seguro en Lima</h1>
+
+            <p id="heroSubtext">Te damos una dirección postal física en Miami. Consolidamos tus compras y las traemos a Lima sin sorpresas en la aduana.</p>
+            
+            <div class="hero-features-minimal">
+                <span><i class="fas fa-check-circle icon-float"></i> Recíbelo desde 72 horas</span>
+                <span><i class="fas fa-check-circle icon-float icon-float-delay1"></i> Tracking en WhatsApp</span>
+                <span><i class="fas fa-check-circle icon-float icon-float-delay2"></i> Soporte Humano Directo</span>
+            </div>
+            
+            <div class="cta-box cta-box-centered">
+                <a href="#" class="btn-whatsapp wa-link">
+                    <i class="fab fa-whatsapp"></i> Cotizar Envío por WhatsApp
+                </a>
+            </div>
+
+            <div class="hero-dots" id="heroDots">
+                <span class="hero-dot active" data-index="0"></span>
+                <span class="hero-dot" data-index="1"></span>
+                <span class="hero-dot" data-index="2"></span>
+            </div>
+        </div>
+    </section>
+
+   <section id="proceso" class="steps-section">
+        <img src="assets/persona-proceso.png" alt="" class="proceso-side-photo icon-float">
+        <div class="container-text reveal">
+            <h2>El Proceso es Simple</h2>
+            <p>A diferencia de otras empresas con trámites engorrosos, con Froximport solo sigues 3 pasos:</p>
+        </div>
+        
+        <div class="ruta-animada">
+            <div class="ruta-linea"></div>
+            <i class="fas fa-plane ruta-avion"></i>
+        </div>
+
+        <div class="steps-grid">
+            <div class="step-card reveal">
+                <div class="step-number">01</div>
+                <div class="step-icon icon-float"><img src="assets/icon-cart.png" alt="Compra Online"></div>
+                <h3>Compra Online</h3>
+                <p>Realiza tus compras en Amazon, eBay, Alibaba o cualquier tienda y envíalas a la dirección de nuestro almacén aliado que te asignaremos.</p>
+            </div>
+            
+            <div class="step-card reveal reveal-delay1">
+                <div class="step-number">02</div>
+                <div class="step-icon icon-float icon-float-delay1"><img src="assets/icon-plane-globe.png" alt="Nosotros Viajamos"></div>
+                <h3>Nosotros Viajamos</h3>
+                <p>Recibimos, consolidamos y gestionamos todo el papeleo de internamiento en las aduanas de Perú de manera totalmente transparente.</p>
+            </div>
+            
+            <div class="step-card reveal reveal-delay2">
+                <div class="step-number">03</div>
+                <div class="step-icon icon-float icon-float-delay2"><img src="assets/icon-truck.png" alt="Recibe en Lima"></div>
+                <h3>Recibe en Lima</h3>
+                <p>Te notificamos de inmediato cuando tu carga esté lista en nuestro centro de distribución para que coordines el recojo o entrega a domicilio.</p>
+            </div>
+        </div>
+
+        <div class="guia-compra guia-compra-3">
+            <div class="guia-card reveal">
+                <div class="guia-icon icon-float"><i class="fas fa-location-dot"></i></div>
+                <h4>Datos de envío (Shipping)</h4>
+                <p>Al pagar en la tienda, coloca como destinatario <strong>tus nombres + tu primer apellido + el código +FX</strong> que te asignamos al registrarte, junto con la dirección de nuestro almacén en Miami. Ese código nos ayuda a identificar tu paquete apenas llega, entre todos los que recibimos ese día.</p>
+                <p style="margin-top: 12px; font-size: 0.88rem; color: #94a3b8;">Recuerda: las compras menores a $200 no pagan impuestos en Perú.</p>
+            </div>
+            <div class="guia-card reveal reveal-delay1">
+                <div class="guia-icon icon-float icon-float-delay1"><i class="fas fa-credit-card"></i></div>
+                <h4>Datos de pago (Billing)</h4>
+                <p>En el checkout de la tienda usas <strong>tu propia tarjeta</strong> de crédito o débito, con el nombre y dirección del titular. Froximport nunca te pide estos datos — esa parte de la compra la haces tú directo con la tienda, nosotros solo gestionamos el envío.</p>
+            </div>
+            <div class="guia-card reveal reveal-delay2">
+                <div class="guia-icon icon-float icon-float-delay2"><i class="fas fa-paper-plane"></i></div>
+                <h4>Después de comprar</h4>
+                <p>Envíanos por WhatsApp (o a <strong>froximport@gmail.com</strong>) tu <strong>orden de compra</strong>, el <strong>número de tracking</strong> y tu <strong>DNI</strong>. La factura debe ser la original que te envía la tienda, sin editar y a tu nombre — con eso arrancamos el proceso hacia Lima.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="transparency-section">
+        <div class="container-text reveal">
+            <h2>Cuentas Claras, Importaciones Seguras</h2>
+            <p>Compara cómo cuidamos tu presupuesto frente a los métodos de envío tradicionales.</p>
+        </div>
+        
+        <div class="table-container">
+            <div class="table-scroll">
+                <table>
+                <thead>
+                    <tr>
+                        <th>Beneficio / Servicio</th>
+                        <th>Courier Tradicional</th>
+                        <th class="highlight-th">Froximport</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Cobro por Peso Volumen (Espacio ocupado)</td>
+                        <td>Sí (Te penalizan por cajas grandes)</td>
+                        <td class="highlight-td">No (Solo peso real de balanza)</td>
+                    </tr>
+                    <tr>
+                        <td>Asesoría aduanera directa personalizada</td>
+                        <td>Inexistente (Trámites automáticos fríos)</td>
+                        <td class="highlight-td">Incluida (Te guiamos paso a paso)</td>
+                    </tr>
+                    <tr>
+                        <td>Consolidación de múltiples paquetes</td>
+                        <td>Cobro extra por cada reempaque</td>
+                        <td class="highlight-td">Gratuita (Consolida y ahorra)</td>
+                    </tr>
+                    <tr>
+                        <td>Soporte y estados de tu carga</td>
+                        <td>Tickets web que tardan días</td>
+                        <td class="highlight-td">Chat Humano Directo por WhatsApp</td>
+                    </tr>
+                </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="calculadora" class="calculadora-seccion">
+        <img src="assets/icon-plane-globe.png" alt="" class="deco-icon icon-float" style="top: 50px; right: 5%; width: 110px;">
+        <img src="assets/icon-ship.png" alt="" class="deco-icon icon-float icon-float-delay1" style="bottom: 50px; left: 44%; width: 115px;">
+        <div class="tip-bubble" style="top: 20px; left: 43%;">
+            ✅ Guarda siempre tu número de tracking, lo vas a necesitar
+        </div>
+        <div class="tip-bubble" style="bottom: 60px; right: 4%;">
+            📦 Verifica el peso real de tu paquete antes de comprar
+        </div>
+
+        <div class="calc-flex-layout">
+            <div class="calc-side-photo-wrapper">
+                <img src="assets/calc-promo.jpg" alt="Froximport - Importaciones a Perú desde USA y China" class="calc-side-photo reveal">
+            </div>
+
+            <div class="calc-right-area">
+                <div class="calc-container">
+                    <div class="container-text reveal" style="margin: 0 0 30px 0;">
+                        <h2>Simulador de Importación</h2>
+                        <p>Coloca los kilos estimados y mira cuánto vas a pagar netamente por el flete internacional.</p>
+                    </div>
+                    
+                    <div class="calculadora-box reveal">
+                        <span class="calc-label">Peso de la mercancía:</span>
+                        <div class="input-group">
+                            <input type="number" id="inputPeso" placeholder="0" min="1" value="1">
+                            <span class="input-unit">KG</span>
+                            <i class="fas fa-box-open calc-input-icon icon-float"></i>
+                        </div>
+
+                        <div class="resultado-box">
+                            <div style="text-align: left;">
+                                <span style="font-size: 0.9rem; color: #cbd5e1; display: block; margin-bottom: 4px;">Flete Froximport (Todo Incluido):</span>
+                                <div id="resultado">$12.00 USD</div>
+                            </div>
+                            <div class="calc-decor-icon icon-float">
+                                <i class="fas fa-calculator"></i>
+                            </div>
+                        </div>
+                        
+                        <p style="font-size: 0.8rem; color: #64748b; margin-top: 20px; line-height: 1.5;">
+                            <i class="fas fa-info-circle"></i> Los cálculos son aproximados y se ejecutan sobre peso neto real. Mercancías restringidas podrían requerir permisos adicionales.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="preguntas" class="faq-seccion">
+        <img src="assets/icon-network.png" alt="" class="deco-icon icon-float icon-float-delay1" style="bottom: 30px; right: 3%; width: 100px;">
+        <div class="container-text reveal">
+            <h2>Preguntas Frecuentes</h2>
+            <p>Todo lo que necesitas saber antes de abrir tu casillero con Froximport</p>
+        </div>
+
+        <div class="faq-grid">
+            <div class="faq-card reveal">
+                <div class="faq-icon icon-float"><img src="assets/icon-cart.png" alt="Cómo comprar"></div>
+                <h3>¿Cómo compro con Froximport?</h3>
+                <p>Compra directo en la tienda usando la dirección de tu casillero en Miami, o mándanos el link del producto por WhatsApp y lo compramos nosotros por ti.</p>
+            </div>
+            <div class="faq-card reveal reveal-delay1">
+                <div class="faq-icon icon-float icon-float-delay1"><img src="assets/icon-tag.png" alt="Cotización"></div>
+                <h3>¿Qué incluye la cotización?</h3>
+                <p>Precio del artículo, impuestos de la tienda de origen y nuestro flete de $12/kg. Sin cargos ocultos ni sorpresas al final.</p>
+            </div>
+            <div class="faq-card reveal reveal-delay2">
+                <div class="faq-icon icon-float icon-float-delay2"><img src="assets/icon-clipboard.png" alt="Comprobante de pago"></div>
+                <h3>¿Emiten comprobante de pago?</h3>
+                <p>Sí, te enviamos comprobante interno por cada envío. Estamos formalizando el RUC del negocio para emitir boleta electrónica próximamente.</p>
+            </div>
+            <div class="faq-card reveal">
+                <div class="faq-icon icon-float"><img src="assets/icon-search.png" alt="Tracking Number"></div>
+                <h3>¿Qué es el Tracking Number?</h3>
+                <p>El código que la tienda o el courier (FedEx, UPS, USPS, China Post) te da para rastrear tu paquete. Suele llegarte por correo tras la compra.</p>
+            </div>
+            <div class="faq-card reveal reveal-delay1">
+                <div class="faq-icon icon-float icon-float-delay1"><img src="assets/icon-box.png" alt="Consolidación"></div>
+                <h3>¿Consolidan varios paquetes?</h3>
+                <p>Sí, gratis. Unimos todas tus compras en un solo envío para que pagues un único flete, siempre que el conjunto no supere los $200.</p>
+            </div>
+            <div class="faq-card reveal reveal-delay2">
+                <div class="faq-icon icon-float icon-float-delay2"><img src="assets/icon-shield-check.png" alt="Límite de $200"></div>
+                <h3>¿Si supero los $200?</h3>
+                <p>Envíos de $200 a $2,000 pagan un impuesto del 22% sobre el excedente. Te avisamos antes de comprar para que decidas con el monto claro.</p>
+            </div>
+            <div class="faq-card reveal">
+                <div class="faq-icon icon-float"><img src="assets/icon-location.png" alt="Documentos requeridos"></div>
+                <h3>¿Qué debo enviarles tras comprar?</h3>
+                <p>Tu orden de compra, el número de tracking y tu DNI escaneado. Con eso identificamos tu carga en Miami y arrancamos el envío.</p>
+            </div>
+            <div class="faq-card reveal reveal-delay1">
+                <div class="faq-icon icon-float icon-float-delay1"><img src="assets/icon-warehouse.png" alt="Cobro por peso"></div>
+                <h3>¿Cobran por volumen?</h3>
+                <p>No. Cobramos únicamente por el peso real que marca la balanza, sin penalización por cajas grandes o poco compactas.</p>
+            </div>
+            <div class="faq-card reveal reveal-delay2">
+                <div class="faq-icon icon-float icon-float-delay2"><img src="assets/icon-network.png" alt="Productos no permitidos"></div>
+                <h3>¿Qué no puedo importar?</h3>
+                <p>Armas, alimentos perecibles, cosméticos sin permiso sanitario y líquidos inflamables, entre otros productos regulados por SUNAT.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <img src="assets/froximport-logo-circle.png" alt="Froximport" class="footer-logo">
+        <p>&copy; 2026 Froximport. Todos los derechos reservados.</p>
+        <p style="font-size: 0.85rem; margin-top: 8px; color: #64748b;">Tu importación segura, sin trámites lentos ni tarifas ocultas.</p>
+    </footer>
+
+    <div class="whatsapp-float-wrapper">
+        <span class="whatsapp-float-tip">Estamos para ayudarte</span>
+        <a href="#" class="whatsapp-float wa-link" aria-label="Escríbenos por WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
