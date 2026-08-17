@@ -4,11 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Froximport - Tu Casillero Internacional Seguro</title>
+
+    <!-- Vista previa al compartir el link (WhatsApp, Facebook, etc.) -->
+    <meta property="og:title" content="Froximport - Tu Casillero Internacional en Miami y China">
+    <meta property="og:description" content="Importa desde USA y China a Lima, Perú. Tarifa plana por kilo, sin sorpresas en aduana. Cotiza gratis por WhatsApp.">
+    <meta property="og:image" content="https://froximport.me/assets/calc-promo.jpg">
+    <meta property="og:url" content="https://froximport.me/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_PE">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Froximport - Tu Casillero Internacional en Miami y China">
+    <meta name="twitter:description" content="Importa desde USA y China a Lima, Perú. Tarifa plana por kilo, sin sorpresas en aduana.">
+    <meta name="twitter:image" content="https://froximport.me/assets/calc-promo.jpg">
+
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <!-- Google Analytics (GA4) — reemplaza G-XXXXXXXXXX con tu Measurement ID real -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
 </head>
 <body>
 
@@ -24,8 +46,8 @@
             </div>
             <nav class="nav-links" id="navLinks">
                 <a href="#proceso">¿Cómo funciona?</a>
-                <a href="#calculadora">Cotización</a>
-                <a href="nosotros.html">Nosotros</a>
+                <a href="#cotizacion">Cotización</a>
+                <a href="nosotros/">Nosotros</a>
                 <a href="#preguntas">Preguntas</a>
                 <div class="nav-socials nav-socials-mobile">
                     <a href="https://www.facebook.com/profile.php?id=61592977619754" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -53,8 +75,8 @@
     <section class="hero" id="heroSection">
         <div class="hero-slides" id="heroSlides">
             <div class="hero-slide-bg active" data-tint="navy" style="background-image: url('export1/ima1.jpg');"></div>
-            <div class="hero-slide-bg" data-tint="emerald" style="background-image: url('assets/hero-bg-2.jpg');"></div>
-            <div class="hero-slide-bg" data-tint="amber" style="background-image: url('assets/hero-bg-3.jpg');"></div>
+            <div class="hero-slide-bg" data-tint="emerald" style="background-image: url('/assets/hero-bg-2.jpg');"></div>
+            <div class="hero-slide-bg" data-tint="amber" style="background-image: url('/assets/hero-bg-3.jpg');"></div>
         </div>
 
         <button type="button" class="hero-arrow hero-arrow-left" id="heroPrev" aria-label="Anterior">
@@ -194,7 +216,7 @@
         </div>
     </section>
 
-    <section id="calculadora" class="calculadora-seccion">
+    <section id="cotizacion" class="calculadora-seccion">
         <img src="assets/icon-plane-globe.png" alt="" class="deco-icon icon-float" style="top: 50px; right: 5%; width: 110px;">
         <img src="assets/icon-ship.png" alt="" class="deco-icon icon-float icon-float-delay1" style="bottom: 50px; left: 44%; width: 115px;">
         <div class="tip-bubble" style="top: 20px; left: 43%;">
