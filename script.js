@@ -6,7 +6,6 @@
 // Formato: código de país + número, SIN "+" ni espacios.
 const WHATSAPP_NUMBER = "51991657904";
 const WHATSAPP_MENSAJE = "¡Hola, Frox Import! Estoy interesado/a en importar unos productos y quisiera más información sobre el servicio.";
-const TARIFA_POR_KILO = 12.00;
 
 // ⚠️ CONFIGURACIÓN DE EMAILJS (formulario "Cotiza tu Envío")
 // Reemplaza estos 4 valores con los tuyos cuando termines de crear tu cuenta en emailjs.com
@@ -17,25 +16,6 @@ const EMAILJS_TEMPLATE_NOTIFY  = "template_e3xfefw";   // el correo que TE llega
 const EMAILJS_TEMPLATE_WELCOME = "template_fmwwmkd";     // el correo que le llega AL CLIENTE
 
 document.addEventListener('DOMContentLoaded', () => {
-
-    /* ---------- 1. CALCULADORA DE FLETE ---------- */
-    const inputPeso = document.getElementById('inputPeso');
-    const txtResultado = document.getElementById('resultado');
-
-    function calcularFlete() {
-        const peso = parseFloat(inputPeso.value);
-        if (isNaN(peso) || peso <= 0) {
-            txtResultado.textContent = '$0.00 USD';
-        } else {
-            const costoTotal = peso * TARIFA_POR_KILO;
-            txtResultado.textContent = `$${costoTotal.toFixed(2)} USD`;
-        }
-    }
-
-    if (inputPeso && txtResultado) {
-        calcularFlete();
-        inputPeso.addEventListener('input', calcularFlete);
-    }
 
     /* ---------- 2. MENÚ HAMBURGUESA (MÓVIL) ---------- */
     const hamburgerBtn = document.getElementById('hamburgerBtn');
@@ -58,25 +38,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    /* ---------- 3. BOTONES DE WHATSAPP (mensajes prellenados) ---------- */
+    /* ---------- 3. BOTONES DE WHATSAPP (mensaje prellenado) ---------- */
     function actualizarLinksWhatsapp() {
         document.querySelectorAll('.wa-link').forEach(link => {
-            let mensaje = WHATSAPP_MENSAJE;
-
-            // El botón "Cotizar Envío" dentro del hero manda el peso y el precio ya calculados
-            if (link.classList.contains('btn-whatsapp') && txtResultado && inputPeso) {
-                const peso = inputPeso.value || '1';
-                mensaje = `Hola Froximport, quiero cotizar mi envío de ${peso} kg (aprox. ${txtResultado.textContent}). ¿Me ayudan con el proceso?`;
-            }
-
-            link.setAttribute('href', `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(mensaje)}`);
+            link.setAttribute('href', `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MENSAJE)}`);
             link.setAttribute('target', '_blank');
             link.setAttribute('rel', 'noopener');
         });
     }
 
     actualizarLinksWhatsapp();
-    if (inputPeso) inputPeso.addEventListener('input', actualizarLinksWhatsapp);
 
     /* ---------- 4. CARRUSEL PRINCIPAL DEL HERO (fondo + titular, flechas + autoplay 7s) ---------- */
     const heroSlideEls = document.querySelectorAll('.hero-slide-bg');
