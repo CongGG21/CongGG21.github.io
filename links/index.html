@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frox Import — Links</title>
+    <meta name="description" content="Frox Import - Casillero internacional y envíos desde USA y China a Perú.">
+    <meta property="og:title" content="Frox Import — Links">
+    <meta property="og:description" content="Casillero internacional y envíos desde USA y China a Perú">
+    <meta property="og:image" content="../public/logo.png">
+    <meta property="og:url" content="https://froximport.me/links">
+    <link rel="icon" href="../public/logo.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            min-height: 100vh;
+            background: #071528;
+            overflow-x: hidden;
+        }
+
+        /* Fondo animado con múltiples colores */
+        .bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .bg-blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.6;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .blob-1 {
+            width: 300px;
+            height: 300px;
+            background: #17A058;
+            top: -100px;
+            right: -80px;
+            animation-delay: 0s;
+        }
+
+        .blob-2 {
+            width: 250px;
+            height: 250px;
+            background: #0D2242;
+            bottom: 20%;
+            left: -60px;
+            animation-delay: 2s;
+        }
+
+        .blob-3 {
+            width: 200px;
+            height: 200px;
+            background: #17A058;
+            bottom: -50px;
+            right: 20%;
+            opacity: 0.4;
+            animation-delay: 4s;
+        }
+
+        .blob-4 {
+            width: 150px;
+            height: 150px;
+            background: #3b82f6;
+            top: 40%;
+            left: 50%;
+            opacity: 0.3;
+            animation-delay: 1s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-30px) scale(1.1); }
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 420px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .logo {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            background: white;
+            margin: 0 auto 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 0 4px rgba(23, 160, 88, 0.3), 0 12px 40px rgba(0, 0, 0, 0.4);
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 4px rgba(23, 160, 88, 0.3), 0 12px 40px rgba(0, 0, 0, 0.4); }
+            50% { box-shadow: 0 0 0 8px rgba(23, 160, 88, 0.15), 0 12px 40px rgba(0, 0, 0, 0.4); }
+        }
+
+        .logo img {
+            width: 105px;
+            height: 105px;
+            object-fit: contain;
+        }
+
+        .name {
+            color: white;
+            font-size: 30px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            letter-spacing: -0.5px;
+        }
+
+        .tagline {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 14px;
+            margin-bottom: 36px;
+            font-weight: 400;
+        }
+
+        .tagline span {
+            color: #17A058;
+            font-weight: 600;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .link {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 16px 18px;
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: all 0.25s ease;
+            backdrop-filter: blur(20px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 100%;
+            border-radius: 3px 0 0 3px;
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+
+        .link:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .link:hover::before {
+            opacity: 1;
+        }
+
+        .link:active {
+            transform: translateY(0);
+        }
+
+        .link-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            flex-shrink: 0;
+        }
+
+        .link-text {
+            flex: 1;
+            text-align: left;
+        }
+
+        .link-text small {
+            display: block;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.45);
+            font-weight: 400;
+            margin-top: 2px;
+        }
+
+        .link-arrow {
+            color: rgba(255, 255, 255, 0.2);
+            font-size: 20px;
+            transition: transform 0.25s ease;
+        }
+
+        .link:hover .link-arrow {
+            transform: translateX(4px);
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Colores por red social */
+        .whatsapp .link-icon { background: #25D366; }
+        .whatsapp::before { background: #25D366; }
+        .whatsapp:hover { border-color: rgba(37, 211, 102, 0.3); }
+
+        .web .link-icon { background: linear-gradient(135deg, #17A058, #0D2242); }
+        .web::before { background: #17A058; }
+        .web:hover { border-color: rgba(23, 160, 88, 0.3); }
+
+        .email .link-icon { background: linear-gradient(135deg, #3b82f6, #1d4ed8); }
+        .email::before { background: #3b82f6; }
+        .email:hover { border-color: rgba(59, 130, 246, 0.3); }
+
+        .tiktok .link-icon { background: #010101; }
+        .tiktok::before { background: #69C9D0; }
+        .tiktok:hover { border-color: rgba(105, 201, 208, 0.3); }
+
+        .instagram .link-icon { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+        .instagram::before { background: linear-gradient(45deg, #f09433, #dc2743); }
+        .instagram:hover { border-color: rgba(220, 39, 67, 0.3); }
+
+        .youtube .link-icon { background: #FF0000; }
+        .youtube::before { background: #FF0000; }
+        .youtube:hover { border-color: rgba(255, 0, 0, 0.3); }
+
+        .facebook .link-icon { background: #1877F2; }
+        .facebook::before { background: #1877F2; }
+        .facebook:hover { border-color: rgba(24, 119, 242, 0.3); }
+
+        .footer {
+            margin-top: 48px;
+            color: rgba(255, 255, 255, 0.25);
+            font-size: 11px;
+        }
+
+        .footer a {
+            color: #17A058;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 32px 16px;
+            }
+            .logo {
+                width: 110px;
+                height: 110px;
+            }
+            .logo img {
+                width: 90px;
+                height: 90px;
+            }
+            .name {
+                font-size: 26px;
+            }
+            .link {
+                padding: 14px 16px;
+            }
+            .link-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg">
+        <div class="bg-blob blob-1"></div>
+        <div class="bg-blob blob-2"></div>
+        <div class="bg-blob blob-3"></div>
+        <div class="bg-blob blob-4"></div>
+    </div>
+
+    <div class="container">
+        <div class="logo">
+            <img src="../public/logo.png" alt="Frox Import">
+        </div>
+        <h1 class="name">Frox Import</h1>
+        <p class="tagline">Tu puente logístico <span>Miami / China → Lima</span> 🇵🇪</p>
+
+        <div class="links">
+            <a href="https://wa.me/51991657904?text=Hola%2C%20Frox%20Import%21%20Estoy%20interesado%2Fa%20en%20importar%20unos%20productos%20y%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20el%20servicio." class="link whatsapp" target="_blank" rel="noopener">
+                <div class="link-icon">💬</div>
+                <div class="link-text">
+                    WhatsApp
+                    <small>Cotiza gratis por WhatsApp</small>
+                </div>
+                <span class="link-arrow">›</span>
+            </a>
+
+            <a href="https://froximport.me" class="link web" target="_blank" rel="noopener">
+                <div class="link-icon">🌐</div>
+                <div class="link-text">
+                    froximport.me
+                    <small>Sitio web oficial</small>
+                </div>
+                <span class="link-arrow">›</span>
+            </a>
+
+            <a href="mailto:pedidos@froximport.me" class="link email">
+                <div class="link-icon">📩</div>
+                <div class="link-text">
+                    pedidos@froximport.me
+                    <small>Correo electrónico</small>
+                </div>
+                <span class="link-arrow">›</span>
+            </a>
+
+            <a href="https://www.tiktok.com/@frox.import" class="link tiktok" target="_blank" rel="noopener">
+                <div class="link-icon">🎵</div>
+                <div class="link-text">
+                    TikTok
+                    <small>@frox.import</small>
+                </div>
+                <span class="link-arrow">›</span>
+            </a>
+
+            <a href="https://www.instagram.com/froximport" class="link instagram" target="_blank" rel="noopener">
+                <div class="link-icon">📸</div>
+                <div class="link-text">
+                    Instagram
+                    <small>@froximport</small>
+                </div>
+                <span class="link-arrow">›</span>
+            </a>
+
+            <a href="https://www.youtube.com/@FroxImport" class="link youtube" target="_blank" rel="noopener">
+                <div class="link-icon">🎬</div>
+                <div class="link-text">
+                    YouTube
+                    <small>@FroxImport</small>
+                </div>
+                <span class="link-arrow">›</span>
+            </a>
+
+            <a href="https://www.facebook.com/profile.php?id=61592977619754" class="link facebook" target="_blank" rel="noopener">
+                <div class="link-icon">📘</div>
+                <div class="link-text">
+                    Facebook
+                    <small>@froximport</small>
+                </div>
+                <span class="link-arrow">›</span>
+            </a>
+        </div>
+
+        <p class="footer">© 2026 Frox Import · <a href="https://froximport.me">froximport.me</a></p>
+    </div>
+</body>
+</html>
