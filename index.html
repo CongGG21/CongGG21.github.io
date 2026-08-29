@@ -21,6 +21,9 @@
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
     <!-- Google Analytics (GA4) — reemplaza G-XXXXXXXXXX con tu Measurement ID real -->
@@ -40,14 +43,15 @@
 
     <header>
         <div class="navbar">
-            <div class="logo">
+            <a href="./" class="logo" style="text-decoration:none;">
                 <img src="assets/froximport-logo-circle.png" alt="Froximport" class="logo-img">
                 FROX<span>IMPORT</span>
-            </div>
+            </a>
             <nav class="nav-links" id="navLinks">
                 <a href="#proceso">¿Cómo funciona?</a>
                 <a href="#cotizacion">Cotización</a>
                 <a href="nosotros/">Nosotros</a>
+                <a href="blog/">Blog</a>
                 <a href="#preguntas">Preguntas</a>
                 <div class="nav-socials nav-socials-mobile">
                     <a href="https://www.facebook.com/profile.php?id=61592977619754" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -75,8 +79,8 @@
     <section class="hero" id="heroSection">
         <div class="hero-slides" id="heroSlides">
             <div class="hero-slide-bg active" data-tint="navy" style="background-image: url('export1/ima1.jpg');"></div>
-            <div class="hero-slide-bg" data-tint="emerald" style="background-image: url('/assets/hero-bg-2.jpg');"></div>
-            <div class="hero-slide-bg" data-tint="amber" style="background-image: url('/assets/hero-bg-3.jpg');"></div>
+            <div class="hero-slide-bg" data-tint="emerald" style="background-image: url('assets/hero-bg-2.jpg');"></div>
+            <div class="hero-slide-bg" data-tint="amber" style="background-image: url('assets/hero-bg-3.jpg');"></div>
         </div>
 
         <button type="button" class="hero-arrow hero-arrow-left" id="heroPrev" aria-label="Anterior">
@@ -262,6 +266,260 @@
                             <i class="fas fa-shield-halved"></i> Tus datos son solo para coordinar tu envío. Cero spam.
                         </p>
                     </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS REALES -->
+    <section class="stats-section">
+        <div class="container-text reveal">
+            <h2>Froximport en Números</h2>
+            <p>Cifras reales que respaldan nuestra experiencia</p>
+        </div>
+        <div class="stats-grid">
+            <div class="stat-box reveal">
+                <div class="stat-icon"><i class="fas fa-box-open"></i></div>
+                <div class="stat-number" data-target="4000">0</div>
+                <div class="stat-label">Envíos gestionados</div>
+            </div>
+            <div class="stat-box reveal reveal-delay1">
+                <div class="stat-icon"><i class="fas fa-users"></i></div>
+                <div class="stat-number" data-target="350">0</div>
+                <div class="stat-label">Clientes activos</div>
+            </div>
+            <div class="stat-box reveal reveal-delay1">
+                <div class="stat-icon"><i class="fas fa-clock"></i></div>
+                <div class="stat-number">72h</div>
+                <div class="stat-label">Tiempo promedio de entrega</div>
+            </div>
+            <div class="stat-box reveal reveal-delay2">
+                <div class="stat-icon"><i class="fas fa-star"></i></div>
+                <div class="stat-number">4.9</div>
+                <div class="stat-label">Satisfacción del cliente</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICIOS ADICIONALES -->
+    <section id="servicios" class="services-section">
+        <div class="container-text reveal">
+            <h2>Servicios Adicionales</h2>
+            <p>Más allá del envío, tenemos soluciones completas para ti</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card reveal">
+                <div class="service-icon"><i class="fas fa-box"></i></div>
+                <h3>Re-empaque Profesional</h3>
+                <p>Reempaquetamos tus compras en cajas reforzadas para mayor seguridad durante el transporte. Ideal para frágiles y electrónicos.</p>
+                <div class="service-price">Desde <strong>$5</strong> por caja</div>
+            </div>
+            <div class="service-card reveal reveal-delay1">
+                <div class="service-icon"><i class="fas fa-user-tie"></i></div>
+                <h3>Personal Shopper</h3>
+                <p>¿No tienes tarjeta internacional o no sabes cómo comprar? Lo hacemos por ti. Envíanos el link y nosotros compramos y enviamos.</p>
+                <div class="service-price">Sin costo adicional</div>
+            </div>
+            <div class="service-card reveal reveal-delay2">
+                <div class="service-icon"><i class="fas fa-warehouse"></i></div>
+                <h3>Consolidación Gratuita</h3>
+                <p>Agrupamos tus compras de diferentes tiendas en un solo envío para que pagues un único flete y ahorres dinero.</p>
+                <div class="service-price">Gratis</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TIENDAS RECOMENDADAS -->
+    <section id="tiendas" class="stores-section">
+        <div class="container-text reveal">
+            <h2>Tiendas Recomendadas</h2>
+            <p>Estas son las tiendas online donde puedes comprar con tu casillero Froximport</p>
+        </div>
+        <div class="stores-grid">
+            <div class="store-card reveal">
+                <div class="store-logo" style="background: #fff; border: 1px solid #eee;">
+                    <img src="assets/logo-amazon.jpg" alt="Amazon" style="width: 100%; height: 100%; object-fit: contain;">
+                </div>
+                <div class="store-name">Amazon</div>
+            </div>
+            <div class="store-card reveal reveal-delay1">
+                <div class="store-logo" style="background: #fff; border: 1px solid #eee;">
+                    <svg viewBox="0 0 70 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <text x="35" y="20" text-anchor="middle" font-family="Arial,sans-serif" font-weight="700" font-size="22">
+                            <tspan fill="#E53238">e</tspan><tspan fill="#0064D2">b</tspan><tspan fill="#F5AF02">a</tspan><tspan fill="#86B817">y</tspan>
+                        </text>
+                    </svg>
+                </div>
+                <div class="store-name">eBay</div>
+            </div>
+            <div class="store-card reveal reveal-delay2">
+                <div class="store-logo" style="background: #0071DC; border: 1px solid #eee;">
+                    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="16" cy="16" r="3.5" fill="#FFC220"/>
+                        <ellipse cx="16" cy="5" rx="2.5" ry="5.5" fill="#FFC220"/>
+                        <ellipse cx="16" cy="27" rx="2.5" ry="5.5" fill="#FFC220"/>
+                        <ellipse cx="5" cy="10" rx="2.5" ry="5.5" fill="#FFC220" transform="rotate(-60 5 10)"/>
+                        <ellipse cx="27" cy="22" rx="2.5" ry="5.5" fill="#FFC220" transform="rotate(-60 27 22)"/>
+                        <ellipse cx="5" cy="22" rx="2.5" ry="5.5" fill="#FFC220" transform="rotate(60 5 22)"/>
+                        <ellipse cx="27" cy="10" rx="2.5" ry="5.5" fill="#FFC220" transform="rotate(60 27 10)"/>
+                    </svg>
+                </div>
+                <div class="store-name">Walmart</div>
+            </div>
+            <div class="store-card reveal">
+                <div class="store-logo" style="background: #FFE600; border: 1px solid #eee;">
+                    <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <text x="18" y="15" text-anchor="middle" fill="#0046BE" font-family="Arial,sans-serif" font-weight="900" font-size="11">BEST</text>
+                        <text x="18" y="28" text-anchor="middle" fill="#0046BE" font-family="Arial,sans-serif" font-weight="900" font-size="11">BUY</text>
+                    </svg>
+                </div>
+                <div class="store-name">Best Buy</div>
+            </div>
+            <div class="store-card reveal reveal-delay1">
+                <div class="store-logo" style="background: #fff; border: 1px solid #eee;">
+                    <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="18" cy="18" r="15" fill="#CC0000"/>
+                        <circle cx="18" cy="18" r="10" fill="#fff"/>
+                        <circle cx="18" cy="18" r="5.5" fill="#CC0000"/>
+                    </svg>
+                </div>
+                <div class="store-name">Target</div>
+            </div>
+            <div class="store-card reveal reveal-delay2">
+                <div class="store-logo" style="background: #000; border: 1px solid #eee;">
+                    <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <text x="18" y="18" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-weight="400" font-size="16">S</text>
+                        <text x="18" y="30" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-weight="600" font-size="8">SHEIN</text>
+                    </svg>
+                </div>
+                <div class="store-name">Shein</div>
+            </div>
+            <div class="store-card reveal">
+                <div class="store-logo" style="background: #F43F24; border: 1px solid #eee;">
+                    <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <text x="18" y="24" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-weight="800" font-size="14">Temu</text>
+                    </svg>
+                </div>
+                <div class="store-name">Temu</div>
+            </div>
+            <div class="store-card reveal reveal-delay1">
+                <div class="store-logo" style="background: #fff; border: 1px solid #eee;">
+                    <img src="assets/logo-nike.jpg" alt="Nike" style="width: 100%; height: 100%; object-fit: contain;">
+                </div>
+                <div class="store-name">Nike</div>
+            </div>
+            <div class="store-card reveal reveal-delay2">
+                <div class="store-logo" style="background: #fff; border: 1px solid #eee;">
+                    <img src="assets/logo-adidas.png" alt="Adidas" style="width: 100%; height: 100%; object-fit: contain;">
+                </div>
+                <div class="store-name">Adidas</div>
+            </div>
+            <div class="store-card reveal">
+                <div class="store-logo" style="background: #fff; border: 1px solid #eee;">
+                    <img src="assets/logo-apple.svg" alt="Apple" style="width: 100%; height: 100%; object-fit: contain;">
+                </div>
+                <div class="store-name">Apple</div>
+            </div>
+            <div class="store-card reveal reveal-delay1">
+                <div class="store-logo" style="background: #fff; border: 1px solid #eee;">
+                    <svg viewBox="0 0 80 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <text x="0" y="19" fill="#111" font-family="Arial,sans-serif" font-weight="800" font-size="18">zappos</text>
+                    </svg>
+                </div>
+                <div class="store-name">Zappos</div>
+            </div>
+            <div class="store-card reveal reveal-delay2">
+                <div class="store-logo" style="background: #FF6A00; border: 1px solid #eee;">
+                    <svg viewBox="0 0 40 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <text x="20" y="16" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-weight="800" font-size="12">e</text>
+                        <text x="20" y="30" text-anchor="middle" fill="#fff" font-family="Arial,sans-serif" font-weight="600" font-size="7">Alibaba.com</text>
+                    </svg>
+                </div>
+                <div class="store-name">Alibaba</div>
+            </div>
+        </div>
+        <div class="container-text reveal" style="text-align: center; margin-top: 30px;">
+            <p style="color: var(--text-muted);">¿No encuentras tu tienda? Escríbenos y la agregamos a nuestra lista.</p>
+        </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section id="testimonios" class="testimonials-section">
+        <div class="container-text reveal">
+            <h2>Lo que Dicen Nuestros Clientes</h2>
+            <p>Experiencias reales de personas que ya importan con Froximport</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card reveal">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">"Compré una laptop en Amazon y llegó a Lima en 5 días. El precio fue exacto como me dijeron, sin sorpresas. Muy recomendado."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">MC</div>
+                    <div>
+                        <div class="testimonial-name">María C.</div>
+                        <div class="testimonial-location">Lima, Perú</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card reveal reveal-delay1">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">"Llevo 3 envíos con ellos y siempre llega todo perfecto. Me encanta que puedo pagar por WhatsApp y me avisan en cada paso."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">CR</div>
+                    <div>
+                        <div class="testimonial-name">Carlos R.</div>
+                        <div class="testimonial-location">Arequipa, Perú</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card reveal reveal-delay2">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">"Importé ropa de Shein para mi negocio y el servicio de consolidación me ahorró mucho. Todo llegó perfecto y en tiempo récord."</p>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">VL</div>
+                    <div>
+                        <div class="testimonial-name">Vanessa L.</div>
+                        <div class="testimonial-location">Trujillo, Perú</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROGRAMA DE REFERIDOS -->
+    <section id="referidos" class="referral-section">
+        <img src="assets/icon-handshake.png" alt="" class="deco-icon icon-float" style="top: 50%; right: 8%; width: 110px; transform: translateY(-50%);">
+        <div class="referral-content reveal">
+            <div class="referral-text">
+                <span class="section-tag">Programa de Referidos</span>
+                <h2>Invita Amigos y Paga Menos</h2>
+                <p>Por cada amigo que traigas a Froximport, ambos reciben un descuento en su próximo envío. ¡Más amigos, más ahorro!</p>
+                <div class="referral-benefits">
+                    <div class="referral-benefit">
+                        <i class="fas fa-gift"></i>
+                        <span>Tu amigo obtiene <strong>$1/kg de descuento</strong> en su primer envío</span>
+                    </div>
+                    <div class="referral-benefit">
+                        <i class="fas fa-percent"></i>
+                        <span>Tú recibes el <strong>mismo descuento</strong> en tu próximo envío</span>
+                    </div>
+                    <div class="referral-benefit">
+                        <i class="fas fa-infinity"></i>
+                        <span><strong>Sin límite</strong> — invites a 1 o a 100, el descuento aplica siempre</span>
+                    </div>
+                </div>
+            </div>
+            <div class="referral-action">
+                <div class="referral-card">
+                    <h3>¿Cómo funciona?</h3>
+                    <ol>
+                        <li>Comparte tu código de referido con tus amigos</li>
+                        <li>Tu amigo se registra usando tu código</li>
+                        <li>Ambos reciben el descuento automáticamente</li>
+                    </ol>
+                    <a href="#" class="btn-whatsapp wa-link">
+                        <i class="fab fa-whatsapp"></i> Unirme al Programa
+                    </a>
                 </div>
             </div>
         </div>

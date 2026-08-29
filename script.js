@@ -126,6 +126,31 @@ document.addEventListener('DOMContentLoaded', () => {
         revealEls.forEach(el => el.classList.add('visible'));
     }
 
+    /* ---------- 5B. CONTADOR ANIMADO DE STATS ---------- */
+    const statNumbers = document.querySelectorAll('.stat-box .stat-number[data-target]');
+    if (statNumbers.length && 'IntersectionObserver' in window) {
+        const statsObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const target = parseInt(el.dataset.target);
+                    let current = 0;
+                    const increment = Math.ceil(target / 60);
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            current = target;
+                            clearInterval(timer);
+                        }
+                        el.textContent = current.toLocaleString('es-PE') + '+';
+                    }, 30);
+                    observer.unobserve(el);
+                }
+            });
+        }, { threshold: 0.5 });
+        statNumbers.forEach(el => statsObserver.observe(el));
+    }
+
     /* ---------- 6. FORMULARIO "COTIZA TU ENVÍO" (EmailJS) ---------- */
     const quoteForm = document.getElementById('quoteForm');
     const quoteSubmitBtn = document.getElementById('quoteSubmitBtn');
