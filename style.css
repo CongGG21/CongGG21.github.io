@@ -315,6 +315,20 @@ header {
 .hero-features-minimal i { color: var(--primary); margin-right: 8px; }
 .cta-box { display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: wrap; }
 
+.hero-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.1);
+    color: #ffffff;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid rgba(255,255,255,0.2);
+    margin-bottom: 15px;
+    text-align: center;
+}
+.price-badge-wrapper { display: inline-block; margin-bottom: 15px; }
+
 .hero .price-badge {
     background-color: #1e293b;
     border: 1px solid #334155;
@@ -921,6 +935,7 @@ footer p:first-of-type { color: #ffffff; font-weight: 600; }
     .hero { padding: 60px 15px; background-attachment: scroll; }
     .hero-container { padding: 35px 20px; border-radius: 16px; }
     .hero h1 { font-size: 2.2rem; }
+    .hero-badge { font-size: 0.72rem; padding: 5px 12px; }
     .cta-box { flex-direction: column; width: 100%; }
     .price-badge, .btn-whatsapp { width: 100%; justify-content: center; }
     .resultado-box { flex-direction: column; gap: 15px; text-align: center; }
@@ -945,6 +960,7 @@ footer p:first-of-type { color: #ffffff; font-weight: 600; }
 @media (max-width: 480px) {
     .hero h1 { font-size: 1.6rem; }
     .hero p { font-size: 0.95rem; }
+    .hero-badge { font-size: 0.65rem; padding: 4px 10px; }
     .nosotros-eyebrow { font-size: 0.75rem; }
     .price-badge .price { font-size: 1.5rem; }
     .calc-label { font-size: 0.9rem; }
