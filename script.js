@@ -7,13 +7,9 @@
 const WHATSAPP_NUMBER = "51991657904";
 const WHATSAPP_MENSAJE = "¡Hola, Frox Import! Estoy interesado/a en importar unos productos y quisiera más información sobre el servicio.";
 
-// ⚠️ CONFIGURACIÓN DE EMAILJS (formulario "Cotiza tu Envío")
-// Reemplaza estos 4 valores con los tuyos cuando termines de crear tu cuenta en emailjs.com
-// (te explico exactamente dónde sacar cada uno en la guía que te doy aparte).
-const EMAILJS_PUBLIC_KEY   = "_xdecPGqOIrEeRTOU";
-const EMAILJS_SERVICE_ID   = "service_rzgec67";
-const EMAILJS_TEMPLATE_NOTIFY  = "template_e3xfefw";   // el correo que TE llega a ti
-const EMAILJS_TEMPLATE_WELCOME = "template_fmwwmkd";     // el correo que le llega AL CLIENTE
+// ⚠️ CONFIGURACIÓN DE WEB3FORMS (formulario "Cotiza tu Envío")
+// Obtén tu API key gratis en https://web3forms.com
+const WEB3FORMS_ACCESS_KEY = "be15bb0d-1ba7-4721-846d-ff43d3218ebe";
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -151,15 +147,13 @@ document.addEventListener('DOMContentLoaded', () => {
         statNumbers.forEach(el => statsObserver.observe(el));
     }
 
-    /* ---------- 6. FORMULARIO "COTIZA TU ENVÍO" (EmailJS) ---------- */
+    /* ---------- 6. FORMULARIO "COTIZA TU ENVÍO" (Web3Forms) ---------- */
     const quoteForm = document.getElementById('quoteForm');
     const quoteSubmitBtn = document.getElementById('quoteSubmitBtn');
     const quoteFormMsg = document.getElementById('quoteFormMsg');
 
-    if (quoteForm && typeof emailjs !== 'undefined') {
-        emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
-
-        quoteForm.addEventListener('submit', function (e) {
+    if (quoteForm) {
+        quoteForm.addEventListener('submit', async function (e) {
             e.preventDefault();
 
             const nombre = document.getElementById('quoteNombre').value.trim();
@@ -172,35 +166,44 @@ document.addEventListener('DOMContentLoaded', () => {
             quoteSubmitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
             quoteFormMsg.style.display = 'none';
 
-            const templateParams = {
-                nombre: nombre,
-                correo: correo,
-                telefono: telefono,
-                to_email: correo // usado por la plantilla de bienvenida para saber a quién responder
-            };
+            try {
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        access_key: WEB3FORMS_ACCESS_KEY,
+                        nombre: nombre,
+                        correo: correo,
+                        telefono: telefono,
+                        subject: 'Nuevo cliente interesado en Frox Import',
+                        from_name: 'Frox Import Web'
+                    })
+                });
 
-            // Correo 1: te avisa a TI que lleg\u00f3 un nuevo interesado
-            emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_NOTIFY, templateParams)
-                .then(() => {
-                    // Correo 2: bienvenida autom\u00e1tica AL CLIENTE
-                    return emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_WELCOME, templateParams);
-                })
-                .then(() => {
-                    quoteFormMsg.textContent = '¡Listo! Revisa tu correo — te acabamos de enviar los requisitos para tu primer envío.';
+                const result = await response.json();
+
+                if (result.success) {
+                    quoteFormMsg.textContent = '¡Listo! Te estamos redirigiendo a WhatsApp...';
                     quoteFormMsg.className = 'quote-form-msg success';
                     quoteFormMsg.style.display = 'block';
                     quoteForm.reset();
-                })
-                .catch((err) => {
-                    console.error('EmailJS error:', err);
-                    quoteFormMsg.textContent = 'Algo salió mal. Escríbenos directo por WhatsApp y te ayudamos ahí mismo.';
-                    quoteFormMsg.className = 'quote-form-msg error';
-                    quoteFormMsg.style.display = 'block';
-                })
-                .finally(() => {
-                    quoteSubmitBtn.disabled = false;
-                    quoteSubmitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Enviar y Recibir Requisitos';
-                });
+
+                    const waMsg = encodeURIComponent('Acabo de llenar mi cotización, deseo más información por favor');
+                    setTimeout(() => {
+                        window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${waMsg}`, '_blank');
+                    }, 1500);
+                } else {
+                    throw new Error('Error de Web3Forms');
+                }
+            } catch (err) {
+                console.error('Web3Forms error:', err);
+                quoteFormMsg.textContent = 'Algo salió mal. Escríbenos directo por WhatsApp y te ayudamos ahí mismo.';
+                quoteFormMsg.className = 'quote-form-msg error';
+                quoteFormMsg.style.display = 'block';
+            } finally {
+                quoteSubmitBtn.disabled = false;
+                quoteSubmitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Enviar y Recibir Requisitos';
+            }
         });
     }
 
