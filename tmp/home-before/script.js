@@ -45,6 +45,65 @@ document.addEventListener('DOMContentLoaded', () => {
 
     actualizarLinksWhatsapp();
 
+    /* ---------- 4. CARRUSEL PRINCIPAL DEL HERO (fondo + titular, flechas + autoplay 7s) ---------- */
+    const heroSlideEls = document.querySelectorAll('.hero-slide-bg');
+    const heroDotEls = document.querySelectorAll('.hero-dot');
+    const heroHeadline = document.getElementById('heroHeadline');
+    const heroSubtext = document.getElementById('heroSubtext');
+    const heroPrev = document.getElementById('heroPrev');
+    const heroNext = document.getElementById('heroNext');
+
+    const heroSlidesData = [
+        {
+            headline: 'Tu Casillero Internacional<br>Seguro en Lima',
+            subtext: 'Te damos una dirección postal física en Miami. Consolidamos tus compras y las traemos a Lima sin sorpresas en la aduana.'
+        },
+        {
+            headline: 'Consolidamos Compras<br>y Envíos',
+            subtext: 'Compra en Miami o China cuando quieras. Consolidamos todo en un solo envío y pagas un único flete sin cargos extra.'
+        },
+        {
+            headline: 'Del Almacén en Miami<br>a Tu Puerta en Lima',
+            subtext: 'Seguimos tu carga en cada etapa del viaje. Te avisamos por WhatsApp, sin sistemas de rastreo confusos ni esperas eternas.'
+        }
+    ];
+
+    if (heroSlideEls.length && heroHeadline && heroSubtext) {
+        let heroIndex = 0;
+        let heroAutoplayTimer = null;
+
+        function renderHeroSlide(index) {
+            heroIndex = (index + heroSlidesData.length) % heroSlidesData.length;
+
+            // Fondo: crossfade entre capas
+            heroSlideEls.forEach((el, i) => el.classList.toggle('active', i === heroIndex));
+
+            // Puntos indicadores
+            heroDotEls.forEach((dot, i) => dot.classList.toggle('active', i === heroIndex));
+
+            // Texto: fade-out, cambio de contenido, fade-in
+            heroHeadline.style.opacity = 0;
+            heroSubtext.style.opacity = 0;
+            setTimeout(() => {
+                heroHeadline.innerHTML = heroSlidesData[heroIndex].headline;
+                heroSubtext.textContent = heroSlidesData[heroIndex].subtext;
+                heroHeadline.style.opacity = 1;
+                heroSubtext.style.opacity = 1;
+            }, 350);
+        }
+
+        function startHeroAutoplay() {
+            clearInterval(heroAutoplayTimer);
+            heroAutoplayTimer = setInterval(() => renderHeroSlide(heroIndex + 1), 7000);
+        }
+
+        if (heroNext) heroNext.addEventListener('click', () => { renderHeroSlide(heroIndex + 1); startHeroAutoplay(); });
+        if (heroPrev) heroPrev.addEventListener('click', () => { renderHeroSlide(heroIndex - 1); startHeroAutoplay(); });
+        heroDotEls.forEach((dot, i) => dot.addEventListener('click', () => { renderHeroSlide(i); startHeroAutoplay(); }));
+
+        startHeroAutoplay();
+    }
+
     /* ---------- 5. ANIMACIÓN REVEAL AL HACER SCROLL ---------- */
     const revealEls = document.querySelectorAll('.reveal');
     if (revealEls.length && 'IntersectionObserver' in window) {

@@ -5,26 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Restricciones de Importación a Perú 2026 - Blog Froximport</title>
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
-    <link rel="stylesheet" href="../style.css?v=2">
+    <link rel="stylesheet" href="../style.css?v=2"><link rel="stylesheet" href="../home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="home-motion">
     <header>
         <div class="navbar">
             <a href="../" class="logo" style="text-decoration:none;">
                 <img src="../assets/froximport-logo-circle.png" alt="Froximport" class="logo-img">
                 FROX<span>IMPORT</span>
             </a>
-            <nav class="nav-links">
+            <nav class="nav-links" id="navLinks">
                 <a href="../#proceso">¿Cómo funciona?</a>
                 <a href="../#cotizacion">Cotización</a>
                 <a href="../nosotros/">Nosotros</a>
                 <a href="./" style="color: #10b981;">Blog</a>
             </nav>
-            <a href="../" class="btn-nav wa-link">Abrir Casillero</a>
+            <a href="../" class="btn-nav btn-nav-desktop wa-link">Abrir Casillero</a><button class="hamburger" id="hamburgerBtn" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
         </div>
     </header>
 
@@ -72,10 +72,9 @@
         </div>
     </div>
 
-    <footer>
-        <img src="../assets/froximport-logo-circle.png" alt="Froximport" class="footer-logo">
-        <p>&copy; 2026 Froximport. Todos los derechos reservados.</p>
+    <footer class="site-footer">
+        <div class="footer-inner"><div class="footer-brand"><img src="../assets/froximport-logo-circle.png" alt="Froximport" class="footer-logo"><div><strong>FROX<span>IMPORT</span></strong><p>Tu puente logístico entre Miami, China y Lima.</p></div></div><div class="footer-contact"><h2>Contactos</h2><a href="tel:+51991657904"><i class="fas fa-phone"></i> +51 991 657 904</a><a href="tel:+51902024807"><i class="fas fa-phone"></i> +51 902 024 807</a></div><div class="footer-social"><h2>Síguenos</h2><div><a href="https://www.facebook.com/profile.php?id=61592977619754" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="https://www.instagram.com/froximport" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="https://www.tiktok.com/@frox.import" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a><a href="https://www.youtube.com/@FroxImport" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a></div></div></div><div class="footer-bottom"><span>&copy; 2026 Froximport.</span><span>Atención directa por WhatsApp</span></div>
     </footer>
-    <script src="../script.js"></script>
+    <script src="../script.js"></script><script src="../home.js"></script>
 </body>
 </html>

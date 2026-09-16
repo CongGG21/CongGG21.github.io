@@ -20,7 +20,6 @@
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,7 +35,7 @@
         gtag('config', 'G-XXXXXXXXXX');
     </script>
 </head>
-<body class="home-motion">
+<body>
 
     <div class="top-announcement">
         Envíos Libres de Impuestos en Perú para compras menores a $200 USD. ¡Aprovecha hoy!
@@ -77,26 +76,57 @@
         </div>
     </header>
 
-    <main>
-    <section class="flight-hero" id="heroSection" aria-labelledby="flightTitle">
-        <div class="flight-scene" aria-hidden="true"><img src="assets/flight-campaign-ai.jpg" width="1536" height="1024" fetchpriority="high" alt=""></div>
-        <div class="flight-shade" aria-hidden="true"></div>
-        <div class="flight-content">
-            <h1 id="flightTitle">Lo quieres.<br>Lo compras.<br><span>Lo traemos.</span></h1>
-            <p>Tus compras de Miami y China, hasta Lima.<br>Nosotros nos encargamos del viaje.</p>
-            <div class="flight-actions"><a href="#" class="btn-whatsapp wa-link"><i class="fab fa-whatsapp" aria-hidden="true"></i> Cotizar mi envío <span aria-hidden="true">↗</span></a><a href="#proceso" class="flight-secondary">Así funciona <span aria-hidden="true">↓</span></a></div>
+    <section class="hero" id="heroSection">
+        <div class="hero-slides" id="heroSlides">
+            <div class="hero-slide-bg active" data-tint="navy" style="background-image: url('export1/ima1.jpg');"></div>
+            <div class="hero-slide-bg" data-tint="emerald" style="background-image: url('assets/hero-bg-2.jpg');"></div>
+            <div class="hero-slide-bg" data-tint="amber" style="background-image: url('assets/hero-bg-3.jpg');"></div>
         </div>
-        <div class="flight-bottom">
-            <div class="flight-route" aria-label="Envíos desde Miami y China hacia Lima"><span>MIAMI / CHINA</span><div class="flight-track" aria-hidden="true"><i class="fas fa-plane"></i></div><span>LIMA, PERÚ</span></div>
-            <button class="motion-toggle" id="motionToggle" type="button" aria-pressed="false"><i class="fas fa-pause" aria-hidden="true"></i><span>Pausar movimiento</span></button>
+
+        <button type="button" class="hero-arrow hero-arrow-left" id="heroPrev" aria-label="Anterior">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button type="button" class="hero-arrow hero-arrow-right" id="heroNext" aria-label="Siguiente">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+
+        <img src="assets/froximport-logo.png" alt="" class="hero-logo-watermark">
+        <div class="hero-container">
+            <div class="price-badge-wrapper">
+                <span class="hero-badge">
+                    🌐 Tu Puente Logístico Miami / China → Lima
+                </span>
+            </div>
+
+            <h1 id="heroHeadline">Tu Casillero Internacional<br>Seguro en Lima</h1>
+
+            <p id="heroSubtext">Te damos una dirección postal física en Miami. Consolidamos tus compras y las traemos a Lima sin sorpresas en la aduana.</p>
+            
+            <div class="hero-features-minimal">
+                <span><i class="fas fa-check-circle icon-float"></i> Recíbelo desde 72 horas</span>
+                <span><i class="fas fa-check-circle icon-float icon-float-delay1"></i> Tracking en WhatsApp</span>
+                <span><i class="fas fa-check-circle icon-float icon-float-delay2"></i> Soporte Humano Directo</span>
+            </div>
+            
+            <div class="cta-box cta-box-centered">
+                <a href="#" class="btn-whatsapp wa-link">
+                    <i class="fab fa-whatsapp"></i> Cotizar Envío por WhatsApp
+                </a>
+            </div>
+
+            <div class="hero-dots" id="heroDots">
+                <span class="hero-dot active" data-index="0"></span>
+                <span class="hero-dot" data-index="1"></span>
+                <span class="hero-dot" data-index="2"></span>
+            </div>
         </div>
     </section>
-    <div class="service-ribbon" aria-label="Beneficios del servicio"><span><i class="fas fa-box" aria-hidden="true"></i> Consolidación US$5</span><span><i class="fas fa-scale-balanced" aria-hidden="true"></i> Solo peso real</span><span><i class="fab fa-whatsapp" aria-hidden="true"></i> Atención por WhatsApp</span></div>
 
    <section id="proceso" class="steps-section">
+        <img src="assets/persona-proceso.png" alt="" class="proceso-side-photo icon-float">
         <div class="container-text reveal">
-            <h2>De tu carrito a tus manos.</h2>
-            <p>Tú eliges. Nosotros conectamos el resto.</p>
+            <h2>El Proceso es Simple</h2>
+            <p>A diferencia de otras empresas con trámites engorrosos, con Froximport solo sigues 3 pasos:</p>
         </div>
         
         <div class="ruta-animada">
@@ -109,45 +139,51 @@
                 <div class="step-number">01</div>
                 <div class="step-icon icon-float"><img src="assets/icon-cart.png" alt="Compra Online"></div>
                 <h3>Compra Online</h3>
-                <p>Compra en tu tienda favorita y usa la dirección de tu casillero.</p>
+                <p>Realiza tus compras en Amazon, eBay, Alibaba o cualquier tienda y envíalas a la dirección de nuestro almacén aliado que te asignaremos.</p>
             </div>
             
             <div class="step-card reveal reveal-delay1">
                 <div class="step-number">02</div>
                 <div class="step-icon icon-float icon-float-delay1"><img src="assets/icon-plane-globe.png" alt="Nosotros Viajamos"></div>
                 <h3>Nosotros Viajamos</h3>
-                <p>Unimos tus paquetes y gestionamos su viaje y aduana.</p>
+                <p>Recibimos, consolidamos y gestionamos todo el papeleo de internamiento en las aduanas de Perú de manera totalmente transparente.</p>
             </div>
             
             <div class="step-card reveal reveal-delay2">
                 <div class="step-number">03</div>
                 <div class="step-icon icon-float icon-float-delay2"><img src="assets/icon-truck.png" alt="Recibe en Lima"></div>
                 <h3>Recibe en Lima</h3>
-                <p>Te avisamos por WhatsApp para coordinar el recojo o la entrega.</p>
+                <p>Te notificamos de inmediato cuando tu carga esté lista en nuestro centro de distribución para que coordines el recojo o entrega a domicilio.</p>
             </div>
         </div>
 
-        <div class="buy-guide"><h3>¿Tu primera compra?</h3><p>Abre solo el paso que necesitas.</p>
-            <details class="info-detail"><summary>Datos de envío (Shipping)<span aria-hidden="true">+</span></summary><div class="detail-copy">
-                <p>Al pagar en la tienda, usa tus nombres y tu primer apellido, junto con la dirección de nuestro almacén en Miami.</p>
+        <div class="guia-compra guia-compra-3">
+            <div class="guia-card reveal">
+                <div class="guia-icon icon-float"><i class="fas fa-location-dot"></i></div>
+                <h4>Datos de envío (Shipping)</h4>
+                <p>Al pagar en la tienda, usa como destinatario tus nombres, tu primer apellido y el código <span class="guia-code-badge">+FX</span> que te asignamos al registrarte, junto con la dirección de nuestro almacén en Miami.</p>
                 <p class="guia-note">💡 Recuerda: las compras menores a $200 no pagan impuestos en Perú.</p>
-            </div></details>
-            <details class="info-detail"><summary>Datos de pago (Billing)<span aria-hidden="true">+</span></summary><div class="detail-copy">
+            </div>
+            <div class="guia-card reveal reveal-delay1">
+                <div class="guia-icon icon-float icon-float-delay1"><i class="fas fa-credit-card"></i></div>
+                <h4>Datos de pago (Billing)</h4>
                 <p>En el checkout de la tienda usas <strong>tu propia tarjeta</strong> de crédito o débito, con el nombre y dirección del titular. Froximport nunca te pide estos datos — esa parte de la compra la haces tú directo con la tienda, nosotros solo gestionamos el envío.</p>
-            </div></details>
-            <details class="info-detail"><summary>Después de comprar<span aria-hidden="true">+</span></summary><div class="detail-copy">
+            </div>
+            <div class="guia-card reveal reveal-delay2">
+                <div class="guia-icon icon-float icon-float-delay2"><i class="fas fa-paper-plane"></i></div>
+                <h4>Después de comprar</h4>
                 <p>Envíanos por WhatsApp (o a <strong>pedidos@froximport.me</strong>) tu <strong>orden de compra</strong>, el <strong>número de tracking</strong> y tu <strong>DNI</strong>. La factura debe ser la original que te envía la tienda, sin editar y a tu nombre — con eso arrancamos el proceso hacia Lima.</p>
-            </div></details>
+            </div>
         </div>
     </section>
 
     <section class="transparency-section">
         <div class="container-text reveal">
-            <h2>Más compras. Un solo envío.</h2>
-            <p>Consolidamos tus paquetes por US$5 y te acompañamos en cada paso.</p>
+            <h2>Cuentas Claras, Importaciones Seguras</h2>
+            <p>Compara cómo cuidamos tu presupuesto frente a los métodos de envío tradicionales.</p>
         </div>
         
-        <details class="comparison-detail" open><summary>Ver comparación de servicios <span aria-hidden="true">+</span></summary><div class="table-container">
+        <div class="table-container">
             <div class="table-scroll">
                 <table>
                 <thead>
@@ -159,44 +195,51 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><i class="fas fa-weight-scale" aria-hidden="true"></i><strong>Cobro por peso</strong><small>Cómo calculan tu envío</small></td>
-                        <td><span class="compare-status compare-negative"><i class="fas fa-xmark" aria-hidden="true"></i> Peso volumétrico</span><small>Las cajas grandes pueden costar más</small></td>
-                        <td class="highlight-td"><span class="compare-status compare-positive"><i class="fas fa-check" aria-hidden="true"></i> Solo peso real</span><small>Pagas lo que marca la balanza</small></td>
+                        <td>Cobro por Peso Volumen (Espacio ocupado)</td>
+                        <td>Sí (Te penalizan por cajas grandes)</td>
+                        <td class="highlight-td">No (Solo peso real de balanza)</td>
                     </tr>
                     <tr>
-                        <td><i class="fas fa-comments" aria-hidden="true"></i><strong>Asesoría aduanera</strong><small>Acompañamiento durante el proceso</small></td>
-                        <td><span class="compare-status compare-negative"><i class="fas fa-xmark" aria-hidden="true"></i> Atención automática</span><small>Tickets y respuestas generales</small></td>
-                        <td class="highlight-td"><span class="compare-status compare-positive"><i class="fas fa-check" aria-hidden="true"></i> Asesoría incluida</span><small>Te guiamos paso a paso</small></td>
+                        <td>Asesoría aduanera directa personalizada</td>
+                        <td>Inexistente (Trámites automáticos fríos)</td>
+                        <td class="highlight-td">Incluida (Te guiamos paso a paso)</td>
                     </tr>
                     <tr>
-                        <td><i class="fas fa-boxes-stacked" aria-hidden="true"></i><strong>Consolidación</strong><small>Varias compras en un envío</small></td>
-                        <td><span class="compare-status compare-negative"><i class="fas fa-minus" aria-hidden="true"></i> Tarifa variable</span><small>Cobros por paquete o reempaque</small></td>
-                        <td class="highlight-td"><span class="compare-status compare-positive"><i class="fas fa-check" aria-hidden="true"></i> US$5</span><small>Por cada consolidación</small></td>
+                        <td>Consolidación de múltiples paquetes</td>
+                        <td>Cobro extra por cada reempaque</td>
+                        <td class="highlight-td">Gratuita (Consolida y ahorra)</td>
                     </tr>
                     <tr>
-                        <td><i class="fab fa-whatsapp" aria-hidden="true"></i><strong>Seguimiento</strong><small>Estado y soporte de tu carga</small></td>
-                        <td><span class="compare-status compare-negative"><i class="fas fa-clock" aria-hidden="true"></i> Tickets web</span><small>La respuesta puede tardar</small></td>
-                        <td class="highlight-td"><span class="compare-status compare-positive"><i class="fas fa-check" aria-hidden="true"></i> Chat humano</span><small>Atención directa por WhatsApp</small></td>
+                        <td>Soporte y estados de tu carga</td>
+                        <td>Tickets web que tardan días</td>
+                        <td class="highlight-td">Chat Humano Directo por WhatsApp</td>
                     </tr>
                 </tbody>
                 </table>
             </div>
-        </div></details>
+        </div>
     </section>
 
     <section id="cotizacion" class="calculadora-seccion">
-        <img src="assets/icon-plane-globe.png" alt="" class="quote-float quote-float-plane" aria-hidden="true">
-        <img src="assets/icon-ship.png" alt="" class="quote-float quote-float-ship" aria-hidden="true">
+        <img src="assets/icon-plane-globe.png" alt="" class="deco-icon icon-float" style="top: 50px; right: 5%; width: 110px;">
+        <img src="assets/icon-ship.png" alt="" class="deco-icon icon-float icon-float-delay1" style="bottom: 50px; left: 44%; width: 115px;">
+        <div class="tip-bubble" style="top: 20px; left: 43%;">
+            ✅ Guarda siempre tu número de tracking, lo vas a necesitar
+        </div>
+        <div class="tip-bubble" style="bottom: 60px; right: 4%;">
+            📦 Verifica el peso real de tu paquete antes de comprar
+        </div>
+
         <div class="calc-flex-layout">
             <div class="calc-side-photo-wrapper">
-                <img src="assets/shopping-campaign-ai.jpg" width="1024" height="1024" loading="lazy" alt="Composición ilustrativa de compras y paquetes: zapatillas, audífonos y ropa" class="calc-side-photo">
+                <img src="assets/calc-promo.jpg" alt="Froximport - Importaciones a Perú desde USA y China" class="calc-side-photo reveal">
             </div>
 
             <div class="calc-right-area">
                 <div class="calc-container">
                     <div class="container-text reveal" style="margin: 0 0 30px 0;">
-                        <h2>Tu próxima compra<br>empieza aquí.</h2>
-                        <p>Déjanos tus datos. Te ayudamos con tu primer envío.</p>
+                        <h2>Cotiza tu Envío Gratis</h2>
+                        <p>Déjanos tus datos y te enviamos los requisitos para tu primer envío directo a tu correo.</p>
                     </div>
                     
                     <form class="calculadora-box reveal" id="quoteForm">
@@ -279,9 +322,9 @@
             </div>
             <div class="service-card reveal reveal-delay2">
                 <div class="service-icon"><i class="fas fa-warehouse"></i></div>
-                <h3>Consolidación de Paquetes</h3>
+                <h3>Consolidación Gratuita</h3>
                 <p>Agrupamos tus compras de diferentes tiendas en un solo envío para que pagues un único flete y ahorres dinero.</p>
-                <div class="service-price"><strong>US$5</strong> por consolidación</div>
+                <div class="service-price">Gratis</div>
             </div>
         </div>
     </section>
@@ -406,13 +449,10 @@
             <h2>Lo que Dicen Nuestros Clientes</h2>
             <p>Experiencias reales de personas que ya importan con Froximport</p>
         </div>
-        <div class="review-controls" hidden>
-            <div class="review-navigation"><button type="button" id="reviewPrev" aria-label="Opinión anterior" aria-controls="reviewTrack"><i class="fas fa-arrow-left" aria-hidden="true"></i></button><span id="reviewPosition" aria-live="polite" aria-atomic="true">1 / 5</span><button type="button" id="reviewNext" aria-label="Siguiente opinión" aria-controls="reviewTrack"><i class="fas fa-arrow-right" aria-hidden="true"></i></button></div>
-        </div>
-        <div class="testimonials-grid" id="reviewTrack" role="region" aria-label="Opiniones de clientes">
+        <div class="testimonials-grid">
             <div class="testimonial-card reveal">
                 <div class="testimonial-stars">★★★★★</div>
-                <p class="testimonial-text">"Era mi primera compra fuera y tenía varias dudas. Me explicaron qué enviar por WhatsApp y la laptop llegó bien. Me ayudó saber cuánto iba a pagar antes."</p>
+                <p class="testimonial-text">"Compré una laptop en Amazon y llegó a Lima en 5 días. El precio fue exacto como me dijeron, sin sorpresas. Muy recomendado."</p>
                 <div class="testimonial-author">
                     <div class="testimonial-avatar">MC</div>
                     <div>
@@ -422,8 +462,8 @@
                 </div>
             </div>
             <div class="testimonial-card reveal reveal-delay1">
-                <div class="testimonial-stars" aria-label="4 de 5 estrellas">★★★★☆</div>
-                <p class="testimonial-text">"Mi segundo paquete demoró un poco más de lo esperado, pero me respondieron cuando pregunté y pude seguir el envío. Al final llegó completo y bien embalado."</p>
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">"Llevo 3 envíos con ellos y siempre llega todo perfecto. Me encanta que puedo pagar por WhatsApp y me avisan en cada paso."</p>
                 <div class="testimonial-author">
                     <div class="testimonial-avatar">CR</div>
                     <div>
@@ -434,7 +474,7 @@
             </div>
             <div class="testimonial-card reveal reveal-delay2">
                 <div class="testimonial-stars">★★★★★</div>
-                <p class="testimonial-text">"Junté ropa de dos tiendas en un solo envío. El proceso fue sencillo y me avisaron cuando ya podía coordinar la entrega. Volvería a usar el servicio."</p>
+                <p class="testimonial-text">"Importé ropa de Shein para mi negocio y el servicio de consolidación me ahorró mucho. Todo llegó perfecto y en tiempo récord."</p>
                 <div class="testimonial-author">
                     <div class="testimonial-avatar">VL</div>
                     <div>
@@ -443,34 +483,12 @@
                     </div>
                 </div>
             </div>
-            <div class="testimonial-card reveal">
-                <div class="testimonial-stars" aria-label="4 de 5 estrellas">★★★★☆</div>
-                <p class="testimonial-text">"Compré unos audífonos y al inicio no sabía qué documento mandar. Me orientaron por WhatsApp; después de eso, el resto fue bastante directo."</p>
-                <div class="testimonial-author">
-                    <div class="testimonial-avatar">DP</div>
-                    <div>
-                        <div class="testimonial-name">Diego P.</div>
-                        <div class="testimonial-location">Lima, Perú</div>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial-card reveal reveal-delay1">
-                <div class="testimonial-stars">★★★★★</div>
-                <p class="testimonial-text">"Pedí unas zapatillas y una mochila. La cotización fue clara y pude consultar por mi paquete sin tener que aprender a usar otra plataforma."</p>
-                <div class="testimonial-author">
-                    <div class="testimonial-avatar">AS</div>
-                    <div>
-                        <div class="testimonial-name">Andrea S.</div>
-                        <div class="testimonial-location">Callao, Perú</div>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
     <!-- PROGRAMA DE REFERIDOS -->
     <section id="referidos" class="referral-section">
-        <img src="assets/icon-handshake-referral.png" alt="" class="deco-icon referral-handshake icon-float" style="top: 50%; right: 3%; width: 170px; transform: translateY(-50%);">
+        <img src="assets/icon-handshake.png" alt="" class="deco-icon icon-float" style="top: 50%; right: 8%; width: 110px; transform: translateY(-50%);">
         <div class="referral-content reveal">
             <div class="referral-text">
                 <span class="section-tag">Programa de Referidos</span>
@@ -511,29 +529,62 @@
         <img src="assets/icon-network.png" alt="" class="deco-icon icon-float icon-float-delay1" style="bottom: 30px; right: 3%; width: 100px;">
         <div class="container-text reveal">
             <h2>Preguntas Frecuentes</h2>
-            <p>Elige una pregunta y descubre la respuesta.</p>
+            <p>Todo lo que necesitas saber antes de abrir tu casillero con Froximport</p>
         </div>
 
         <div class="faq-grid">
-            <details class="info-detail"><summary>¿Cómo compro con Froximport?<span aria-hidden="true">+</span></summary><div class="detail-copy"><p>Compra directo en la tienda usando la dirección de tu casillero en Miami, o mándanos el link del producto por WhatsApp y lo compramos nosotros por ti.</p></div></details>
-            <details class="info-detail"><summary>¿Qué incluye la cotización?<span aria-hidden="true">+</span></summary><div class="detail-copy"><p>Precio del artículo, impuestos de la tienda de origen y nuestro flete por kilo. Si agrupas varios paquetes, la consolidación cuesta US$5 adicionales. Te enviamos el detalle por WhatsApp o correo.</p></div></details>
-            <details class="info-detail"><summary>¿Emiten comprobante de pago?<span aria-hidden="true">+</span></summary><div class="detail-copy"><p>Sí, te enviamos comprobante interno por cada envío. Estamos formalizando el RUC del negocio para emitir boleta electrónica próximamente.</p></div></details>
-            <details class="info-detail"><summary>¿Qué es el Tracking Number?<span aria-hidden="true">+</span></summary><div class="detail-copy"><p>El código que la tienda o el courier (FedEx, UPS, USPS, China Post) te da para rastrear tu paquete. Suele llegarte por correo tras la compra.</p></div></details>
-            <details class="info-detail"><summary>¿Cuánto cuesta consolidar mis paquetes?<span aria-hidden="true">+</span></summary><div class="detail-copy"><p>La consolidación cuesta <strong>US$5</strong>, además del flete. Unimos tus compras en un solo envío para que pagues un único flete, siempre que el conjunto no supere los $200.</p></div></details>
-            <details class="info-detail"><summary>¿Si supero los $200?<span aria-hidden="true">+</span></summary><div class="detail-copy"><p>Envíos de $200 a $2,000 pagan un impuesto del 22% sobre el excedente. Te avisamos antes de comprar para que decidas con el monto claro.</p></div></details>
-            <details class="info-detail"><summary>¿Qué debo enviarles tras comprar?<span aria-hidden="true">+</span></summary><div class="detail-copy"><p>Tu orden de compra, el número de tracking y tu DNI escaneado. Con eso identificamos tu carga en Miami y arrancamos el envío.</p></div></details>
-            <details class="info-detail"><summary>¿Cobran por volumen?<span aria-hidden="true">+</span></summary><div class="detail-copy"><p>No. Cobramos únicamente por el peso real que marca la balanza, sin penalización por cajas grandes o poco compactas.</p></div></details>
-            <details class="info-detail"><summary>¿Qué no puedo importar?<span aria-hidden="true">+</span></summary><div class="detail-copy"><p>Armas, alimentos perecibles, cosméticos sin permiso sanitario y líquidos inflamables, entre otros productos regulados por SUNAT.</p></div></details>
+            <div class="faq-card reveal">
+                <div class="faq-icon icon-float"><img src="assets/icon-cart.png" alt="Cómo comprar"></div>
+                <h3>¿Cómo compro con Froximport?</h3>
+                <p>Compra directo en la tienda usando la dirección de tu casillero en Miami, o mándanos el link del producto por WhatsApp y lo compramos nosotros por ti.</p>
+            </div>
+            <div class="faq-card reveal reveal-delay1">
+                <div class="faq-icon icon-float icon-float-delay1"><img src="assets/icon-tag.png" alt="Cotización"></div>
+                <h3>¿Qué incluye la cotización?</h3>
+                <p>Precio del artículo, impuestos de la tienda de origen y nuestro flete por kilo. Te la enviamos directo por WhatsApp o correo, sin cargos ocultos ni sorpresas al final.</p>
+            </div>
+            <div class="faq-card reveal reveal-delay2">
+                <div class="faq-icon icon-float icon-float-delay2"><img src="assets/icon-clipboard.png" alt="Comprobante de pago"></div>
+                <h3>¿Emiten comprobante de pago?</h3>
+                <p>Sí, te enviamos comprobante interno por cada envío. Estamos formalizando el RUC del negocio para emitir boleta electrónica próximamente.</p>
+            </div>
+            <div class="faq-card reveal">
+                <div class="faq-icon icon-float"><img src="assets/icon-search.png" alt="Tracking Number"></div>
+                <h3>¿Qué es el Tracking Number?</h3>
+                <p>El código que la tienda o el courier (FedEx, UPS, USPS, China Post) te da para rastrear tu paquete. Suele llegarte por correo tras la compra.</p>
+            </div>
+            <div class="faq-card reveal reveal-delay1">
+                <div class="faq-icon icon-float icon-float-delay1"><img src="assets/icon-box.png" alt="Consolidación"></div>
+                <h3>¿Consolidan varios paquetes?</h3>
+                <p>Sí, gratis. Unimos todas tus compras en un solo envío para que pagues un único flete, siempre que el conjunto no supere los $200.</p>
+            </div>
+            <div class="faq-card reveal reveal-delay2">
+                <div class="faq-icon icon-float icon-float-delay2"><img src="assets/icon-shield-check.png" alt="Límite de $200"></div>
+                <h3>¿Si supero los $200?</h3>
+                <p>Envíos de $200 a $2,000 pagan un impuesto del 22% sobre el excedente. Te avisamos antes de comprar para que decidas con el monto claro.</p>
+            </div>
+            <div class="faq-card reveal">
+                <div class="faq-icon icon-float"><img src="assets/icon-location.png" alt="Documentos requeridos"></div>
+                <h3>¿Qué debo enviarles tras comprar?</h3>
+                <p>Tu orden de compra, el número de tracking y tu DNI escaneado. Con eso identificamos tu carga en Miami y arrancamos el envío.</p>
+            </div>
+            <div class="faq-card reveal reveal-delay1">
+                <div class="faq-icon icon-float icon-float-delay1"><img src="assets/icon-warehouse.png" alt="Cobro por peso"></div>
+                <h3>¿Cobran por volumen?</h3>
+                <p>No. Cobramos únicamente por el peso real que marca la balanza, sin penalización por cajas grandes o poco compactas.</p>
+            </div>
+            <div class="faq-card reveal reveal-delay2">
+                <div class="faq-icon icon-float icon-float-delay2"><img src="assets/icon-network.png" alt="Productos no permitidos"></div>
+                <h3>¿Qué no puedo importar?</h3>
+                <p>Armas, alimentos perecibles, cosméticos sin permiso sanitario y líquidos inflamables, entre otros productos regulados por SUNAT.</p>
+            </div>
         </div>
     </section>
 
-    </main>
-    <footer class="site-footer">
-        <div class="footer-inner">
-            <div class="footer-brand"><img src="assets/froximport-logo-circle.png" alt="Froximport" class="footer-logo"><div><strong>FROX<span>IMPORT</span></strong><p>Tu puente logístico entre Miami, China y Lima.</p></div></div>
-            <div class="footer-contact"><h2>Contactos</h2><a href="tel:+51991657904"><i class="fas fa-phone"></i> +51 991 657 904</a><a href="tel:+51902024807"><i class="fas fa-phone"></i> +51 902 024 807</a><a href="mailto:froximport@pedidos.me"><i class="fas fa-envelope"></i> froximport@pedidos.me</a></div>
-            <div class="footer-social"><h2>Síguenos</h2><div><a href="https://www.facebook.com/profile.php?id=61592977619754" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="https://www.instagram.com/froximport?igsh=emxqamZuNndoajQx" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="https://www.tiktok.com/@frox.import?_r=1&_t=ZS-98hogxlpGYX" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a><a href="https://www.youtube.com/@FroxImport" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a><a href="https://x.com/FroxImport" target="_blank" rel="noopener" aria-label="X"><i class="fab fa-x-twitter"></i></a></div></div>
-        </div><div class="footer-bottom"><span>&copy; 2026 Froximport. Todos los derechos reservados.</span><span>Atención directa por WhatsApp</span></div>
+    <footer>
+        <img src="assets/froximport-logo-circle.png" alt="Froximport" class="footer-logo">
+        <p>&copy; 2026 Froximport. Todos los derechos reservados.</p>
+        <p style="font-size: 0.85rem; margin-top: 8px; color: #64748b;">Tu importación segura, sin trámites lentos ni tarifas ocultas.</p>
     </footer>
 
     <div class="whatsapp-float-wrapper">
@@ -544,6 +595,5 @@
     </div>
 
     <script src="script.js"></script>
-    <script src="home.js"></script>
 </body>
 </html>

@@ -20,6 +20,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon-180.png">
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,7 +35,7 @@
         gtag('config', 'G-XXXXXXXXXX');
     </script>
 </head>
-<body>
+<body class="home-motion">
 
     <div class="top-announcement">
         Envíos Libres de Impuestos en Perú para compras menores a $200 USD. ¡Aprovecha hoy!
@@ -76,22 +77,14 @@
     </header>
 
     <!-- HERO DE LA PÁGINA "NOSOTROS" -->
-    <section class="nosotros-hero">
-        <img src="../assets/froximport-logo.png" alt="" class="hero-logo-watermark">
-        <div class="nosotros-hero-inner">
-            <div class="nosotros-hero-content reveal">
-                <span class="nosotros-eyebrow">🐉 Conoce Froximport</span>
-                <h1>El puente logístico que conecta<br>Miami, China y Lima</h1>
-                <p>Somos un equipo peruano que empezó con una idea simple: hacer que importar desde el extranjero sea tan fácil como comprar en una tienda local, sin letra chica ni sorpresas en la aduana.</p>
-            </div>
-            <div class="nosotros-hero-photo-wrapper reveal reveal-delay1">
-                <img src="../assets/nosotros-hero.jpg" alt="Equipo Froximport preparando envíos en el almacén" class="nosotros-hero-photo">
-            </div>
-        </div>
+    <section class="page-flight-hero about-flight-hero" aria-labelledby="pageTitle">
+        <div class="page-flight-bg" aria-hidden="true"><img src="../assets/nosotros-hero-ai-v2.jpg" width="1672" height="941" alt=""></div><div class="page-flight-shade" aria-hidden="true"></div>
+        <div class="page-flight-content"><h1 id="pageTitle">Más cerca,<br>en cada envío.</h1><p>Un equipo peruano que conecta tus compras de Miami y China con Lima, con claridad y acompañamiento humano.</p><a href="#quienes" class="flight-secondary">Conócenos <span aria-hidden="true">↓</span></a></div>
+        <div class="page-flight-line" aria-hidden="true"><i class="fas fa-plane"></i></div>
     </section>
 
     <!-- QUIÉNES SOMOS -->
-    <section class="nosotros-seccion">
+    <section class="nosotros-seccion" id="quienes">
         <div class="nosotros-grid">
             <div class="nosotros-texto reveal">
                 <span class="section-tag">Quiénes somos</span>
@@ -183,10 +176,8 @@
         </div>
     </section>
 
-    <footer>
-        <img src="../assets/froximport-logo-circle.png" alt="Froximport" class="footer-logo">
-        <p>&copy; 2026 Froximport. Todos los derechos reservados.</p>
-        <p style="font-size: 0.85rem; margin-top: 8px; color: #64748b;">Tu importación segura, sin trámites lentos ni tarifas ocultas.</p>
+    <footer class="site-footer">
+        <div class="footer-inner"><div class="footer-brand"><img src="../assets/froximport-logo-circle.png" alt="Froximport" class="footer-logo"><div><strong>FROX<span>IMPORT</span></strong><p>Tu puente logístico entre Miami, China y Lima.</p></div></div><div class="footer-contact"><h2>Contactos</h2><a href="tel:+51991657904"><i class="fas fa-phone"></i> +51 991 657 904</a><a href="tel:+51902024807"><i class="fas fa-phone"></i> +51 902 024 807</a><a href="mailto:froximport@pedidos.me"><i class="fas fa-envelope"></i> froximport@pedidos.me</a></div><div class="footer-social"><h2>Síguenos</h2><div><a href="https://www.facebook.com/profile.php?id=61592977619754" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="https://www.instagram.com/froximport?igsh=emxqamZuNndoajQx" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="https://www.tiktok.com/@frox.import?_r=1&_t=ZS-98hogxlpGYX" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a><a href="https://www.youtube.com/@FroxImport" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a><a href="https://x.com/FroxImport" target="_blank" rel="noopener" aria-label="X"><i class="fab fa-x-twitter"></i></a></div></div></div><div class="footer-bottom"><span>&copy; 2026 Froximport. Todos los derechos reservados.</span><span>Atención directa por WhatsApp</span></div>
     </footer>
 
     <div class="whatsapp-float-wrapper">
@@ -196,6 +187,6 @@
         </a>
     </div>
 
-    <script src="../script.js"></script>
+    <script src="../script.js"></script><script src="../home.js"></script>
 </body>
 </html>

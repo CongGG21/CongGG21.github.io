@@ -9,12 +9,13 @@
     <meta property="og:image" content="https://froximport.me/assets/calc-promo.jpg">
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
     <link rel="stylesheet" href="../style.css?v=2">
+    <link rel="stylesheet" href="../home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="home-motion">
     <header>
         <div class="navbar">
             <a href="../" class="logo" style="text-decoration:none;">
@@ -28,16 +29,18 @@
                 <a href="../#preguntas">Preguntas</a>
                 <a href="./" style="color: #10b981;">Blog</a>
             </nav>
-            <a href="../" class="btn-nav wa-link">Abrir Casillero</a>
+            <a href="../" class="btn-nav btn-nav-desktop wa-link">Abrir Casillero</a>
+            <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
         </div>
     </header>
 
-    <section class="blog-hero">
-        <h1>Blog Froximport</h1>
-        <p>Guías, tips y todo lo que necesitas saber para importar desde Estados Unidos y China a Perú</p>
+    <section class="page-flight-hero blog-flight-hero" aria-labelledby="pageTitle">
+        <div class="page-flight-bg" aria-hidden="true"><img src="../assets/blog-logistica-hero.png" width="1664" height="941" alt=""></div><div class="page-flight-shade" aria-hidden="true"></div>
+        <div class="page-flight-content"><h1 id="pageTitle">Ideas que hacen<br>viajar mejor.</h1><p>Guías claras para comprar en Estados Unidos y China y recibir en Perú.</p><a href="#articulos" class="flight-secondary">Explorar guías <span aria-hidden="true">↓</span></a></div>
+        <div class="page-flight-line" aria-hidden="true"><i class="fas fa-plane"></i></div>
     </section>
 
-    <div class="blog-grid">
+    <div class="blog-grid" id="articulos">
         <a href="como-comprar-en-amazon.html" style="text-decoration:none; color:inherit;">
             <article class="blog-card">
                 <img src="../assets/calc-promo.jpg" alt="Cómo comprar en Amazon" class="blog-card-img">
@@ -73,10 +76,9 @@
         </a>
     </div>
 
-    <footer>
-        <img src="../assets/froximport-logo-circle.png" alt="Froximport" class="footer-logo">
-        <p>&copy; 2026 Froximport. Todos los derechos reservados.</p>
+    <footer class="site-footer">
+        <div class="footer-inner"><div class="footer-brand"><img src="../assets/froximport-logo-circle.png" alt="Froximport" class="footer-logo"><div><strong>FROX<span>IMPORT</span></strong><p>Tu puente logístico entre Miami, China y Lima.</p></div></div><div class="footer-contact"><h2>Contactos</h2><a href="tel:+51991657904"><i class="fas fa-phone"></i> +51 991 657 904</a><a href="tel:+51902024807"><i class="fas fa-phone"></i> +51 902 024 807</a><a href="mailto:froximport@pedidos.me"><i class="fas fa-envelope"></i> froximport@pedidos.me</a></div><div class="footer-social"><h2>Síguenos</h2><div><a href="https://www.facebook.com/profile.php?id=61592977619754" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="https://www.instagram.com/froximport?igsh=emxqamZuNndoajQx" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="https://www.tiktok.com/@frox.import?_r=1&_t=ZS-98hogxlpGYX" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a><a href="https://www.youtube.com/@FroxImport" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a><a href="https://x.com/FroxImport" target="_blank" rel="noopener" aria-label="X"><i class="fab fa-x-twitter"></i></a></div></div></div><div class="footer-bottom"><span>&copy; 2026 Froximport. Todos los derechos reservados.</span><span>Atención directa por WhatsApp</span></div>
     </footer>
-    <script src="../script.js"></script>
+    <script src="../script.js"></script><script src="../home.js"></script>
 </body>
 </html>
