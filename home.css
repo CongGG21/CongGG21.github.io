@@ -288,8 +288,7 @@ summary::-webkit-details-marker { display: none; }
  .page-flight-hero { min-height: 500px; }
  .page-flight-content { width: min(100% - 48px,760px); }
  .home-motion .calc-side-photo-wrapper { flex-basis: auto; }
- .quote-float { width: 76px; height: 76px; opacity: .55; }
- .quote-float-ship { width: 96px; height: 96px; opacity: .72; }
+ .quote-float { display: none !important; }
  .site-footer .footer-inner { grid-template-columns: 1fr 1fr; }
  .site-footer .footer-brand { grid-column: 1/-1; }
 }
