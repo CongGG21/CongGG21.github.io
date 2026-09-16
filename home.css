@@ -301,9 +301,7 @@ summary::-webkit-details-marker { display: none; }
  .page-flight-shade { background: linear-gradient(0deg,rgba(3,22,39,.96),rgba(3,22,39,.48) 72%,rgba(3,22,39,.15)); }
  .about-flight-hero .page-flight-bg img { object-position: 62% center; }
  .blog-flight-hero .page-flight-bg img { object-position: 68% center; }
- .quote-float { width: 62px; height: 62px; opacity: .42; }
- .quote-float-plane { top: 340px; right: 8px; }
- .quote-float-ship { bottom: 18px; left: 20px; width: 78px; height: 78px; opacity: .58; }
+ .quote-float { display: none; }
  .home-motion .comparison-detail > summary { width: 100%; justify-content: space-between; }
  .home-motion .comparison-detail .table-scroll { overflow: visible; }
  .home-motion .comparison-detail table,.home-motion .comparison-detail thead,.home-motion .comparison-detail tbody,.home-motion .comparison-detail tr,.home-motion .comparison-detail td { display: block; min-width: 0; width: 100%; }
